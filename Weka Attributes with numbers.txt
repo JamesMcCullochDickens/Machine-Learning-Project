@@ -1,0 +1,50 @@
+@relation IncomePrediction
+0 @attribute 'Age' numeric
+1 @attribute 'ClassOfWorker' {'Not in universe', 'Private', 'Self-employed-not incorporated', 'Local governement', 'State goverment', 'Self-employed-incorporated', 'Federal government', 'Never worked', 'Without pay'}
+2 @attribute 'Industry Code' numeric
+3 @attribute 'Occupation Code' numeric
+4 @attribute 'Education' {'Children', 'Less than 1st grade', '1st 2nd 3rd or 4th grade', '5th or 6th grade', '7th and 8th grade', '9th grade', '10th grade', '11th grade', '12th grade no diploma', 'High school graduate', 'Some college but no degree', 'Associates degree-academic program', 'Associates degree-occup /vocational', 'Bachelors degree(BA AB BS)', 'Masters degree(MA MS MEng MEd MSW MBA)', 'Prof school degree (MD DDS DVM LLB JD)', 'Doctorate degree(PhD EdD)'}
+5 @attribute 'Wage' numeric
+6 @attribute 'EnrolledEducation' {'Not in universe', 'High school', 'College or university'}
+7 @attribute 'Marital Status' {'Never married', 'Married-civilian spouse present', 'Divorced', 'Widowed', 'Separated', 'Married-spouse absent', 'Married-A F spouse present'}
+8 @attribute 'Major Industry' {'Public administration', 'Construction', 'Manufacturing-nondurable goods', 'Medical except hospital', 'Agriculture', 'Wholesale trade', 'Transportation', 'Education', 'Finance insurance and real estate', 'Manufacturing-durable goods', 'Not in universe or children', 'Retail trade', 'Armed Forces', 'Business and repair services', 'Forestry and fisheries', 'Utilities and sanitary services', 'Mining', 'Personal services except private HH', 'Other professional services', 'Private household services', 'Entertainment', 'Hospital services', 'Communications', 'Social services'}
+9 @attribute 'Major Occupation' {'Technicians and related support', 'Other service', 'Protective services', 'Armed Forces', 'Precision production craft & repair', 'Transportation and material moving', 'Handlers equip cleaners etc ', 'Farming forestry and fishing', 'Professional specialty', 'Private household services', 'Not in universe', 'Sales', 'Adm support including clerical', 'Machine operators assmblrs & inspctrs', 'Executive admin and managerial'}
+10 @attribute 'Race' {'Asian or Pacific Islander', 'White', 'Other', 'Amer Indian Aleut or Eskimo', 'Black'}
+11 @attribute 'HispanicOrigin' {'Puerto Rican', 'Mexican (Mexicano)', 'Cuban', 'Chicano', 'Other Spanish', 'Do not know', 'All other', 'Mexican-American', 'Central or South American', 'NA'}
+12 @attribute 'Sex' {'Female', 'Male'}
+13 @attribute 'Union' {'No', 'Yes', 'Not in universe'}
+14 @attribute 'UnemploymentReason' {'New entrant', 'Job loser - on layoff', 'Job leaver', 'Not in universe', 'Re-entrant', 'Other job loser'}
+15 @attribute 'EmploymentStatus' {'PT for non-econ reasons usually FT', 'PT for econ reasons usually PT', 'Unemployed part- time', 'Full-time schedules', 'Children or Armed Forces', 'Not in labor force', 'PT for econ reasons usually FT', 'Unemployed full-time'}
+16 @attribute 'CapitalGains' numeric
+17 @attribute 'CapitalLosses' numeric
+18 @attribute 'StockDividends' numeric
+19 @attribute 'TaxFiler' {'Head of household', 'Joint both under 65', 'Single', 'Joint one under 65 & one 65+', 'Joint both 65+', 'Nonfiler'}
+20 @attribute 'RegionOfResidence' {'Not in universe', 'Abroad', 'Northeast', 'South', 'West', 'Midwest'}
+21 @attribute 'StateOfResidence' {'Wyoming', 'Vermont', 'Wisconsin', 'New Jersey', 'Colorado', 'North Dakota', 'Delaware', 'North Carolina', 'Indiana', 'Massachusetts', 'New Hampshire', 'Georgia', 'Utah', 'Virginia', 'Minnesota', 'Maine', 'Tennessee', 'Nevada', 'Louisiana', 'Pennsylvania', 'Florida', 'West Virginia', 'Texas', 'Iowa', 'Ohio', 'Arkansas', 'Idaho', 'Kansas', 'Abroad', 'Mississippi', 'District of Columbia', 'Arizona', 'Missouri', 'New York', 'Connecticut', 'California', 'South Carolina', 'Oregon', 'South Dakota', 'Not in universe', 'New Mexico', 'Alaska', 'Illinois', 'Kentucky', 'Montana', '?', 'Nebraska', 'Maryland', 'Alabama', 'Michigan', 'Oklahoma'}
+22 @attribute 'HouseHoldFamily' {'Child <18 ever marr not in subfamily', 'In group quarters', 'Other Rel <18 spouse of subfamily RP', 'Other Rel 18+ spouse of subfamily RP', 'Spouse of RP of unrelated subfamily', 'Grandchild 18+ spouse of subfamily RP', 'Grandchild <18 never marr RP of subfamily', 'Child 18+ never marr Not in a subfamily', 'Spouse of householder', 'Other Rel <18 ever marr not in subfamily', 'Grandchild 18+ never marr not in subfamily', 'Grandchild <18 never marr not in subfamily', 'Child <18 spouse of subfamily RP', 'Secondary individual', 'Child 18+ spouse of subfamily RP', 'Child 18+ never marr RP of subfamily', 'Child 18+ ever marr Not in a subfamily', 'Nonfamily householder', 'Other Rel <18 never marr child of subfamily RP', 'Child under 18 of RP of unrel subfamily', 'Other Rel 18+ never marr not in subfamily', 'Child <18 never marr RP of subfamily', 'Other Rel <18 never marr not in subfamily', 'Child <18 ever marr RP of subfamily', 'Other Rel 18+ ever marr not in subfamily', 'Child <18 never marr not in subfamily', 'Child 18+ ever marr RP of subfamily', 'Other Rel 18+ ever marr RP of subfamily', 'Grandchild <18 never marr child of subfamily RP', 'RP of unrelated subfamily', 'Householder', 'Other Rel <18 ever marr RP of subfamily', 'Grandchild <18 ever marr not in subfamily', 'Grandchild 18+ ever marr RP of subfamily', 'Grandchild 18+ never marr RP of subfamily', 'Grandchild 18+ ever marr not in subfamily', 'Other Rel 18+ never marr RP of subfamily', 'Other Rel <18 never married RP of subfamily'}
+23 @attribute 'HouseholdSummary' {'Group Quarters- Secondary individual', 'Child under 18 ever married', 'Spouse of householder', 'Nonrelative of householder', 'Child under 18 never married', 'Householder', 'Child 18 or older', 'Other relative of householder'}
+24 @attribute 'InstanceWeight' numeric
+25 @attribute 'MigrationCode' {'NonMSA to MSA', 'MSA to nonMSA', 'Abroad to MSA', 'MSA to MSA', 'Not identifiable', 'Abroad to nonMSA', 'Not in universe', 'Nonmover', 'NonMSA to nonMSA', '?'}
+26 @attribute 'MigrationChangeRegion' {'Different county same state', 'Different division same region', 'Abroad', 'Different region', 'Same county', 'Not in universe', 'Nonmover', 'Different state same division', '?'}
+27 @attribute 'MigrationMove' {'Different county same state', 'Different state in West', 'Different state in Northeast', 'Abroad', 'Same county', 'Different state in South', 'Not in universe', 'Nonmover', 'Different state in Midwest', '?'}
+28 @attribute 'LivingInHouse' {'Yes', 'Not in universe under 1 year old', 'No'}
+29 @attribute 'MigrationPreviousResidence' {'No', 'Not in universe', 'Yes', '?'}
+30 @attribute 'NumPeopleWorkingWithEmployers' numeric
+31 @attribute 'FamilySituation' {'Father only present', 'Not in universe', 'Both parents present', 'Neither parent present', 'Mother only present'}
+32 @attribute 'CountryOfBirthOfFather' {'Ireland', 'Honduras', 'Panama', 'Jamaica', '?', 'Puerto-Rico', 'Peru', 'Cuba', 'Haiti', 'El-Salvador', 'South Korea', 'France', 'India', 'Germany', 'Cambodia', 'Mexico', 'Japan', 'England', 'United-States', 'Scotland', 'Hong Kong', 'Poland', 'Italy', 'Laos', 'Outlying-U S (Guam USVI etc)', 'Dominican-Republic', 'Nicaragua', 'Greece', 'Thailand', 'Columbia', 'Yugoslavia', 'Philippines', 'Taiwan', 'Hungary', 'Portugal', 'Trinadad&Tobago', 'Holand-Netherlands', 'Vietnam', 'Guatemala', 'Ecuador', 'Canada', 'Iran', 'China'}
+33 @attribute 'CountryOfBirthOfMother' {'Ireland', 'Honduras', 'Panama', 'Jamaica', '?', 'Puerto-Rico', 'Peru', 'Cuba', 'Haiti', 'El-Salvador', 'South Korea', 'France', 'India', 'Germany', 'Cambodia', 'Mexico', 'Japan', 'England', 'United-States', 'Scotland', 'Hong Kong', 'Poland', 'Italy', 'Laos', 'Outlying-U S (Guam USVI etc)', 'Dominican-Republic', 'Nicaragua', 'Greece', 'Thailand', 'Columbia', 'Yugoslavia', 'Philippines', 'Taiwan', 'Hungary', 'Portugal', 'Trinadad&Tobago', 'Holand-Netherlands', 'Vietnam', 'Guatemala', 'Ecuador', 'Canada', 'Iran', 'China'}
+34 @attribute 'CountryOfBirthOfPerson' {'Ireland', 'Honduras', 'Panama', 'Jamaica', '?', 'Puerto-Rico', 'Peru', 'Cuba', 'Haiti', 'El-Salvador', 'South Korea', 'France', 'India', 'Germany', 'Cambodia', 'Mexico', 'Japan', 'England', 'United-States', 'Scotland', 'Hong Kong', 'Poland', 'Italy', 'Laos', 'Outlying-U S (Guam USVI etc)', 'Dominican-Republic', 'Nicaragua', 'Greece', 'Thailand', 'Columbia', 'Yugoslavia', 'Philippines', 'Taiwan', 'Hungary', 'Portugal', 'Trinadad&Tobago', 'Holand-Netherlands', 'Vietnam', 'Guatemala', 'Ecuador', 'Canada', 'Iran', 'China'}
+35 @attribute 'Citizenship' {'Foreign born- Not a citizen of U S ', 'Native- Born abroad of American Parent(s)', 'Native- Born in the United States', 'Foreign born- U S citizen by naturalization', 'Native- Born in Puerto Rico or U S Outlying'}
+36 @attribute 'Self-Employed' numeric
+37 @attribute 'SurveryCompleted' {'Not in universe', 'No', 'Yes'}
+38 @attribute 'VetBenefits' numeric
+39 @attribute 'WeeksWorked' numeric
+40 @attribute 'YearCompleted' numeric
+41 @attribute 'Class' {'50000+.', '- 50000.'}
+@data
+
+
+
+
+
+indices_to_add_quotes = [1,4,5,6,7,8,9,10,11,12,13,14,15,19,20,21,22,23,24,25,26,27,28,29,31,32,33,34,35,37,41]

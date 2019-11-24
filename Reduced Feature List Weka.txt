@@ -1,0 +1,25 @@
+@relation
+0 @attribute 'Age' numeric
+1 @attribute 'Class Of Worker' {'Not Employed', 'Private', 'Self-Employed', 'Local government', 'State government', 'Federal government'}
+2 @attribute 'Industry Code' numeric
+3 @attribute 'Occupation Code' numeric
+4 @attribute 'Education' {'Less than High School', 'High school graduate', 'College', 'Bachelors', 'Masters', 'Prof Degree', 'Doctorate'}
+5 @attribute 'Wage' numeric
+6 @attribute 'EnrolledEducation' {'Not in School', 'High school', 'College or university'}
+7 @attribute 'Married' {'Not Married', 'Married', 'Divorced', 'Widowed'}
+8 @attribute 'Race' {'Asian or Pacific Islander', 'White', 'Other', 'Amer Indian Aleut or Eskimo', 'Black'}
+9 @attribute 'Sex' {'Male', 'Female'}
+10 @attribute 'Employment Status' {'Not Employed', 'Part-Time', 'Full-Time', 'Children or Armed Forces'}
+11 @attribute 'Capital Gains' numeric
+12 @attribute 'Capital Losses' numeric
+13 @attribute 'Stock Dividends' numeric
+14 @attribute 'Tax Filer status' {'Head of household', 'Joint', 'Single', 'Nonfiler'}
+15 @attribute 'Weight' numeric
+16 @attribute 'Country of Birth of Parents' {"Has American Parent", "Does not have American Parent"}
+17 @attribute 'Country of Birth of Person' {"Born in United-States", "Not born in United-States"}
+18 @attribute 'Weeks Worked' numeric
+19 @attribute 'Class' {"- 50000.", "50000+."}
+@data  
+
+Feature numbers are : 0, 1, 2, 3, 4, 5, 6, 7, 10, 12, 15, 16, 17, 18, 19, 24,  32, 33, 34, 39, 41
+
