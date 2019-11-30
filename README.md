@@ -34,13 +34,15 @@ Next Preprocess3.py
 'census-income.data/train_data',  
 'census-income.test/test_data'
 
+
+Models.py
+- Trains and evalutes the five models on the training/testing set and prints evaluation metrics
+
 For convenience I have included Weka attribute files for the full original dataset in the file WekaFullAttributes.txt,
-as well as the Reduced Feature List in the file ReducedFeatureListWeka.txt. 
+as well as a reduced feature list as per the output of Preproces2.py in the file ReducedFeatureListWeka.txt. 
 
 The rules output by the decision tree are written to the file Tree Rules.txt, and the rules output by the Skope Rules
 classifier are available in the file Skope Rules.txt
 
-Models.py
-- Trains and evalutes the five models on the training/testing set and prints evaluation metrics
 
 
