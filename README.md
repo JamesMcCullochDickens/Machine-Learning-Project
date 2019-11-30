@@ -15,14 +15,14 @@ First Preprocess.py takes the initial census-income.data file and census-income.
 - deals with instance weight conflicts
 - replaces missing values with their defaults
 - writes the result to files:
-'census-income.data/training_data_preprocess1'
+'census-income.data/training_data_preprocess1', 
 'census-income.test/testing_data_preprocess1'
 
 Next Preprocess2.py 
 - eliminates certain features
 - simplifies certain features by using binning
 - writes the result to the files:
-'census-income.data/training_data_preprocess2'
+'census-income.data/training_data_preprocess2', 
 'census-income.test/testing_data_preprocess2'
 
 Next Preprocess3.py 
@@ -31,7 +31,7 @@ Next Preprocess3.py
 - feature calibration of the occupation code and industry code
 - Binarization of sex, country of birth of parents, country of birth of the person, and income category
 - writes the result to the files:
-'census-income.data/train_data'  
+'census-income.data/train_data',  
 'census-income.test/test_data'
 
 Models.py
