@@ -5,7 +5,7 @@ Final Project - CSI 5155: Machine Learning, Course taught by Dr. Herna Viktor.
 This is my code for the machine learning task of binary classification of the data available at 
 http://archive.ics.uci.edu/ml/datasets/Census-Income+(KDD), which consists of 
 weighted census data extracted from the 1994 and 1995 current population surveys conducted by the U.S. Census Bureau.
-The goal is to evaluate five commonly used machine learning models (along with a semi-supervised neural network!) to 
+The goal is to evaluate five commonly used machine learning models (including a semi-supervised neural network!) to 
 classify whether a given instance makes more than 50K a year or not , a.k.a a binary classification task.
 
 My code is organized as follows:
