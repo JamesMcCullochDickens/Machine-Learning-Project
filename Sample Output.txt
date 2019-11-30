@@ -1,0 +1,787 @@
+C:\Users\James\Anaconda3\envs\keras-gpu\python.exe C:/Users/James/PycharmProjects/MLProject/Models.py
+Using TensorFlow backend.
+C:\Users\James\Anaconda3\envs\keras-gpu\lib\site-packages\sklearn\externals\six.py:31: DeprecationWarning: The module is deprecated in version 0.21 and will be removed in version 0.23 since we've dropped support for Python 2.7. Please rely on the official version of six (https://pypi.org/project/six/).
+  "(https://pypi.org/project/six/).", DeprecationWarning)
+The number of majority class instances in the training set is 140529
+The number of minority class instances in the training set is 12367
+The total is 152896
+The number of majority class instances in the testing set is 93576
+The number of minority class instances in the testing set is 6186
+The total is 99762
+After resampling
+The number of majority class instances in the training set is 50000
+The number of minority class instances in the training set is 20000
+The total is 70000
+The number of majority class instances in the validation set is 9986
+The number of minority class instances in the validation set is 4014
+The total is 14000
+
+The accuracy for the model Decision Tree - Gini criterion is 85.04%
+The minority class recall for the model Decision Tree - Gini criterion is 67.21%
+The minority class f1 score for the model Decision Tree - Gini criterion is 72.04%
+The minority class precision for the model Decision Tree - Gini criterion is 77.62%
+The confusion matrix is given by: 
+[[9208  778]
+ [1316 2698]]
+
+The accuracy for the model Decision Tree - Entropy criterion is 86.54%
+The minority class recall for the model Decision Tree - Entropy criterion is 75.14%
+The minority class f1 score for the model Decision Tree - Entropy criterion is 76.20%
+The minority class precision for the model Decision Tree - Entropy criterion is 77.29%
+The confusion matrix is given by: 
+[[9100  886]
+ [ 998 3016]]
+
+The accuracy for the model Decision Tree - Gini criterion variant is 86.92%
+The minority class recall for the model Decision Tree - Gini criterion variant is 81.54%
+The minority class f1 score for the model Decision Tree - Gini criterion variant is 78.14%
+The minority class precision for the model Decision Tree - Gini criterion variant is 75.02%
+The confusion matrix is given by: 
+[[8896 1090]
+ [ 741 3273]]
+In light of these results, the entropy decision tree will be chosen with max depth = 8, and minimum samples to split = 2
+
+Printing the results per fold for the Decision Tree - Entropy criterion model
+
+Fold 1: Accuracy  85.51%
+Fold 1: Recall  65.80%
+Fold 1: Precision  79.95%
+Fold 1: ROC area  90.34%
+
+Fold 2: Accuracy  84.77%
+Fold 2: Recall  66.00%
+Fold 2: Precision  77.37%
+Fold 2: ROC area  89.98%
+
+Fold 3: Accuracy  84.56%
+Fold 3: Recall  65.75%
+Fold 3: Precision  76.86%
+Fold 3: ROC area  90.20%
+
+Fold 4: Accuracy  85.07%
+Fold 4: Recall  67.30%
+Fold 4: Precision  77.49%
+Fold 4: ROC area  90.40%
+
+Fold 5: Accuracy  85.41%
+Fold 5: Recall  67.90%
+Fold 5: Precision  78.18%
+Fold 5: ROC area  91.06%
+
+Fold 6: Accuracy  84.37%
+Fold 6: Recall  65.75%
+Fold 6: Precision  76.28%
+Fold 6: ROC area  89.62%
+
+Fold 7: Accuracy  84.93%
+Fold 7: Recall  69.65%
+Fold 7: Precision  75.67%
+Fold 7: ROC area  89.92%
+
+Fold 8: Accuracy  84.97%
+Fold 8: Recall  63.35%
+Fold 8: Precision  79.89%
+Fold 8: ROC area  89.90%
+
+Fold 9: Accuracy  84.97%
+Fold 9: Recall  67.85%
+Fold 9: Precision  76.84%
+Fold 9: ROC area  90.41%
+
+Fold 10: Accuracy  84.96%
+Fold 10: Recall  65.05%
+Fold 10: Precision  78.61%
+Fold 10: ROC area  89.90%
+
+The accuracy for the model Decision Tree - Entropy criterion is 92.75%
+The minority class recall for the model Decision Tree - Entropy criterion is 64.14%
+The minority class f1 score for the model Decision Tree - Entropy criterion is 52.32%
+The minority class precision for the model Decision Tree - Entropy criterion is 44.18%
+The confusion matrix is given by: 
+[[88563  5013]
+ [ 2218  3968]]
+
+The accuracy for the model Nearest Neighbours - Model 1  is 88.14%
+The minority class recall for the model Nearest Neighbours - Model 1  is 83.23%
+The minority class f1 score for the model Nearest Neighbours - Model 1  is 80.09%
+The minority class precision for the model Nearest Neighbours - Model 1  is 77.18%
+The confusion matrix is given by: 
+[[8998  988]
+ [ 673 3341]]
+
+The accuracy for the model Nearest Neighbours - Model 2  is 84.94%
+The minority class recall for the model Nearest Neighbours - Model 2  is 71.25%
+The minority class f1 score for the model Nearest Neighbours - Model 2  is 73.07%
+The minority class precision for the model Nearest Neighbours - Model 2  is 74.99%
+The confusion matrix is given by: 
+[[9032  954]
+ [1154 2860]]
+
+The accuracy for the model Nearest Neighbours - Model 3  is 88.15%
+The minority class recall for the model Nearest Neighbours - Model 3  is 83.03%
+The minority class f1 score for the model Nearest Neighbours - Model 3  is 80.07%
+The minority class precision for the model Nearest Neighbours - Model 3  is 77.31%
+The confusion matrix is given by: 
+[[9008  978]
+ [ 681 3333]]
+
+The accuracy for the model Nearest Neighbours - Model 4  is 87.56%
+The minority class recall for the model Nearest Neighbours - Model 4  is 83.13%
+The minority class f1 score for the model Nearest Neighbours - Model 4  is 79.31%
+The minority class precision for the model Nearest Neighbours - Model 4  is 75.82%
+The confusion matrix is given by: 
+[[8922 1064]
+ [ 677 3337]]
+
+The accuracy for the model Nearest Neighbours - Model 5  is 87.10%
+The minority class recall for the model Nearest Neighbours - Model 5  is 81.46%
+The minority class f1 score for the model Nearest Neighbours - Model 5  is 78.36%
+The minority class precision for the model Nearest Neighbours - Model 5  is 75.48%
+The confusion matrix is given by: 
+[[8924 1062]
+ [ 744 3270]]
+
+As per the results, the first nearest neighbours model with parameters 5 neighbours at a weighted distance, will be chosen
+
+Printing the results per fold for the Nearest Neighbours model
+
+Fold 1: Accuracy  88.77%
+Fold 1: Recall  84.85%
+Fold 1: Precision  77.84%
+Fold 1: ROC area  93.65%
+
+Fold 2: Accuracy  88.03%
+Fold 2: Recall  84.00%
+Fold 2: Precision  76.43%
+Fold 2: ROC area  93.03%
+
+Fold 3: Accuracy  88.16%
+Fold 3: Recall  83.70%
+Fold 3: Precision  76.89%
+Fold 3: ROC area  92.45%
+
+Fold 4: Accuracy  87.76%
+Fold 4: Recall  83.85%
+Fold 4: Precision  75.85%
+Fold 4: ROC area  92.98%
+
+Fold 5: Accuracy  87.67%
+Fold 5: Recall  84.40%
+Fold 5: Precision  75.39%
+Fold 5: ROC area  93.25%
+
+Fold 6: Accuracy  88.47%
+Fold 6: Recall  84.15%
+Fold 6: Precision  77.45%
+Fold 6: ROC area  93.23%
+
+Fold 7: Accuracy  87.67%
+Fold 7: Recall  82.90%
+Fold 7: Precision  76.09%
+Fold 7: ROC area  92.62%
+
+Fold 8: Accuracy  88.94%
+Fold 8: Recall  86.45%
+Fold 8: Precision  77.46%
+Fold 8: ROC area  93.75%
+
+Fold 9: Accuracy  88.69%
+Fold 9: Recall  85.15%
+Fold 9: Precision  77.48%
+Fold 9: ROC area  93.14%
+
+Fold 10: Accuracy  88.37%
+Fold 10: Recall  84.05%
+Fold 10: Precision  77.25%
+Fold 10: ROC area  93.10%
+
+The accuracy for the model Nearest Neighbours is 90.71%
+The minority class recall for the model Nearest Neighbours is 64.13%
+The minority class f1 score for the model Nearest Neighbours is 46.11%
+The minority class precision for the model Nearest Neighbours is 36.00%
+The confusion matrix is given by: 
+[[86524  7052]
+ [ 2219  3967]]
+2019-11-29 23:05:24.412700: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX AVX2
+2019-11-29 23:05:24.414673: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library nvcuda.dll
+Epoch 1/10
+2019-11-29 23:05:24.430073: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: GeForce RTX 2080 major: 7 minor: 5 memoryClockRate(GHz): 1.8
+pciBusID: 0000:01:00.0
+2019-11-29 23:05:24.430280: I tensorflow/stream_executor/platform/default/dlopen_checker_stub.cc:25] GPU libraries are statically linked, skip dlopen check.
+2019-11-29 23:05:24.430695: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0
+2019-11-29 23:05:24.817313: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-11-29 23:05:24.817413: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2019-11-29 23:05:24.817471: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2019-11-29 23:05:24.817997: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 6280 MB memory) -> physical GPU (device: 0, name: GeForce RTX 2080, pci bus id: 0000:01:00.0, compute capability: 7.5)
+
+ 1000/17500 [>.............................] - ETA: 16s - loss: 0.6989 - acc: 0.4000
+17500/17500 [==============================] - 1s 60us/step - loss: 0.6869 - acc: 0.6256
+Epoch 2/10
+
+ 1000/17500 [>.............................] - ETA: 0s - loss: 0.6707 - acc: 0.7460
+17500/17500 [==============================] - 0s 3us/step - loss: 0.6546 - acc: 0.7429
+Epoch 3/10
+
+ 1000/17500 [>.............................] - ETA: 0s - loss: 0.6366 - acc: 0.7450
+17500/17500 [==============================] - 0s 2us/step - loss: 0.6138 - acc: 0.7490
+Epoch 4/10
+
+ 1000/17500 [>.............................] - ETA: 0s - loss: 0.5960 - acc: 0.7400
+17500/17500 [==============================] - 0s 2us/step - loss: 0.5729 - acc: 0.7552
+Epoch 5/10
+
+ 1000/17500 [>.............................] - ETA: 0s - loss: 0.5436 - acc: 0.7600
+17500/17500 [==============================] - 0s 2us/step - loss: 0.5351 - acc: 0.7659
+Epoch 6/10
+
+ 1000/17500 [>.............................] - ETA: 0s - loss: 0.5223 - acc: 0.7800
+17500/17500 [==============================] - 0s 2us/step - loss: 0.5055 - acc: 0.7745
+Epoch 7/10
+
+ 1000/17500 [>.............................] - ETA: 0s - loss: 0.4778 - acc: 0.7870
+17500/17500 [==============================] - 0s 3us/step - loss: 0.4811 - acc: 0.7845
+Epoch 8/10
+
+ 1000/17500 [>.............................] - ETA: 0s - loss: 0.4787 - acc: 0.7720
+17500/17500 [==============================] - 0s 2us/step - loss: 0.4581 - acc: 0.7921
+Epoch 9/10
+
+ 1000/17500 [>.............................] - ETA: 0s - loss: 0.4527 - acc: 0.7940
+17500/17500 [==============================] - 0s 2us/step - loss: 0.4337 - acc: 0.8007
+Epoch 10/10
+
+ 1000/17500 [>.............................] - ETA: 0s - loss: 0.4281 - acc: 0.7930
+17500/17500 [==============================] - 0s 2us/step - loss: 0.4082 - acc: 0.8095
+Epoch 1/10
+
+1000/8750 [==>...........................] - ETA: 0s - loss: 0.4026 - acc: 0.8060
+8750/8750 [==============================] - 0s 3us/step - loss: 0.3934 - acc: 0.8171
+Epoch 2/10
+
+1000/8750 [==>...........................] - ETA: 0s - loss: 0.4058 - acc: 0.8090
+8750/8750 [==============================] - 0s 3us/step - loss: 0.3845 - acc: 0.8213
+Epoch 3/10
+
+1000/8750 [==>...........................] - ETA: 0s - loss: 0.3761 - acc: 0.8320
+8750/8750 [==============================] - 0s 3us/step - loss: 0.3769 - acc: 0.8269
+Epoch 4/10
+
+1000/8750 [==>...........................] - ETA: 0s - loss: 0.3786 - acc: 0.8260
+8750/8750 [==============================] - 0s 3us/step - loss: 0.3719 - acc: 0.8298
+Epoch 5/10
+
+1000/8750 [==>...........................] - ETA: 0s - loss: 0.3903 - acc: 0.8110
+8750/8750 [==============================] - 0s 2us/step - loss: 0.3676 - acc: 0.8297
+Epoch 6/10
+
+1000/8750 [==>...........................] - ETA: 0s - loss: 0.3578 - acc: 0.8320
+8750/8750 [==============================] - 0s 2us/step - loss: 0.3652 - acc: 0.8323
+Epoch 7/10
+
+1000/8750 [==>...........................] - ETA: 0s - loss: 0.3463 - acc: 0.8420
+8750/8750 [==============================] - 0s 3us/step - loss: 0.3616 - acc: 0.8325
+Epoch 8/10
+
+1000/8750 [==>...........................] - ETA: 0s - loss: 0.3324 - acc: 0.8520
+8750/8750 [==============================] - 0s 2us/step - loss: 0.3597 - acc: 0.8335
+Epoch 9/10
+
+1000/8750 [==>...........................] - ETA: 0s - loss: 0.3703 - acc: 0.8270
+8750/8750 [==============================] - 0s 2us/step - loss: 0.3567 - acc: 0.8355
+Epoch 10/10
+
+1000/8750 [==>...........................] - ETA: 0s - loss: 0.3388 - acc: 0.8530
+8750/8750 [==============================] - 0s 3us/step - loss: 0.3547 - acc: 0.8351
+Epoch 1/10
+
+1000/7050 [===>..........................] - ETA: 0s - loss: 0.1204 - acc: 1.0000
+7050/7050 [==============================] - 0s 3us/step - loss: 0.1128 - acc: 1.0000
+Epoch 2/10
+
+1000/7050 [===>..........................] - ETA: 0s - loss: 0.0930 - acc: 1.0000
+7050/7050 [==============================] - 0s 3us/step - loss: 0.0804 - acc: 1.0000
+Epoch 3/10
+
+1000/7050 [===>..........................] - ETA: 0s - loss: 0.0636 - acc: 0.9990
+7050/7050 [==============================] - 0s 3us/step - loss: 0.0541 - acc: 0.9999
+Epoch 4/10
+
+1000/7050 [===>..........................] - ETA: 0s - loss: 0.0429 - acc: 1.0000
+7050/7050 [==============================] - 0s 3us/step - loss: 0.0382 - acc: 0.9991
+Epoch 5/10
+
+1000/7050 [===>..........................] - ETA: 0s - loss: 0.0317 - acc: 1.0000
+7050/7050 [==============================] - 0s 3us/step - loss: 0.0287 - acc: 0.9997
+Epoch 6/10
+
+1000/7050 [===>..........................] - ETA: 0s - loss: 0.0248 - acc: 1.0000
+7050/7050 [==============================] - 0s 2us/step - loss: 0.0227 - acc: 0.9997
+Epoch 7/10
+
+1000/7050 [===>..........................] - ETA: 0s - loss: 0.0191 - acc: 0.9990
+7050/7050 [==============================] - 0s 3us/step - loss: 0.0184 - acc: 0.9996
+Epoch 8/10
+
+1000/7050 [===>..........................] - ETA: 0s - loss: 0.0162 - acc: 0.9990
+7050/7050 [==============================] - 0s 3us/step - loss: 0.0154 - acc: 0.9997
+Epoch 9/10
+
+1000/7050 [===>..........................] - ETA: 0s - loss: 0.0128 - acc: 1.0000
+7050/7050 [==============================] - 0s 3us/step - loss: 0.0132 - acc: 0.9999
+Epoch 10/10
+
+1000/7050 [===>..........................] - ETA: 0s - loss: 0.0122 - acc: 1.0000
+7050/7050 [==============================] - 0s 3us/step - loss: 0.0114 - acc: 1.0000
+Epoch 1/10
+
+1000/8750 [==>...........................] - ETA: 0s - loss: 0.5667 - acc: 0.8300
+8750/8750 [==============================] - 0s 2us/step - loss: 0.5620 - acc: 0.8297
+Epoch 2/10
+
+1000/8750 [==>...........................] - ETA: 0s - loss: 0.4584 - acc: 0.8430
+8750/8750 [==============================] - 0s 3us/step - loss: 0.4624 - acc: 0.8327
+Epoch 3/10
+
+1000/8750 [==>...........................] - ETA: 0s - loss: 0.3493 - acc: 0.8610
+8750/8750 [==============================] - 0s 3us/step - loss: 0.3977 - acc: 0.8333
+Epoch 4/10
+
+1000/8750 [==>...........................] - ETA: 0s - loss: 0.3834 - acc: 0.8380
+8750/8750 [==============================] - 0s 3us/step - loss: 0.3723 - acc: 0.8362
+Epoch 5/10
+
+1000/8750 [==>...........................] - ETA: 0s - loss: 0.3575 - acc: 0.8440
+8750/8750 [==============================] - 0s 3us/step - loss: 0.3624 - acc: 0.8361
+Epoch 6/10
+
+1000/8750 [==>...........................] - ETA: 0s - loss: 0.3606 - acc: 0.8450
+8750/8750 [==============================] - 0s 3us/step - loss: 0.3570 - acc: 0.8390
+Epoch 7/10
+
+1000/8750 [==>...........................] - ETA: 0s - loss: 0.3946 - acc: 0.8100
+8750/8750 [==============================] - 0s 2us/step - loss: 0.3536 - acc: 0.8394
+Epoch 8/10
+
+1000/8750 [==>...........................] - ETA: 0s - loss: 0.3315 - acc: 0.8450
+8750/8750 [==============================] - 0s 2us/step - loss: 0.3518 - acc: 0.8409
+Epoch 9/10
+
+1000/8750 [==>...........................] - ETA: 0s - loss: 0.3513 - acc: 0.8350
+8750/8750 [==============================] - 0s 2us/step - loss: 0.3511 - acc: 0.8394
+Epoch 10/10
+
+1000/8750 [==>...........................] - ETA: 0s - loss: 0.3556 - acc: 0.8260
+8750/8750 [==============================] - 0s 2us/step - loss: 0.3497 - acc: 0.8401
+Epoch 1/10
+
+1000/7228 [===>..........................] - ETA: 0s - loss: 0.1230 - acc: 1.0000
+7228/7228 [==============================] - 0s 3us/step - loss: 0.1143 - acc: 1.0000
+Epoch 2/10
+
+1000/7228 [===>..........................] - ETA: 0s - loss: 0.0981 - acc: 1.0000
+7228/7228 [==============================] - 0s 3us/step - loss: 0.0939 - acc: 1.0000
+Epoch 3/10
+
+1000/7228 [===>..........................] - ETA: 0s - loss: 0.0865 - acc: 1.0000
+7228/7228 [==============================] - 0s 2us/step - loss: 0.0729 - acc: 1.0000
+Epoch 4/10
+
+1000/7228 [===>..........................] - ETA: 0s - loss: 0.0607 - acc: 1.0000
+7228/7228 [==============================] - 0s 3us/step - loss: 0.0572 - acc: 0.9992
+Epoch 5/10
+
+1000/7228 [===>..........................] - ETA: 0s - loss: 0.0511 - acc: 0.9990
+7228/7228 [==============================] - 0s 3us/step - loss: 0.0463 - acc: 0.9996
+Epoch 6/10
+
+1000/7228 [===>..........................] - ETA: 0s - loss: 0.0351 - acc: 1.0000
+7228/7228 [==============================] - 0s 3us/step - loss: 0.0381 - acc: 0.9997
+Epoch 7/10
+
+1000/7228 [===>..........................] - ETA: 0s - loss: 0.0344 - acc: 1.0000
+7228/7228 [==============================] - 0s 2us/step - loss: 0.0321 - acc: 0.9997
+Epoch 8/10
+
+1000/7228 [===>..........................] - ETA: 0s - loss: 0.0311 - acc: 1.0000
+7228/7228 [==============================] - 0s 3us/step - loss: 0.0275 - acc: 0.9997
+Epoch 9/10
+
+1000/7228 [===>..........................] - ETA: 0s - loss: 0.0245 - acc: 1.0000
+7228/7228 [==============================] - 0s 2us/step - loss: 0.0240 - acc: 0.9997
+Epoch 10/10
+
+1000/7228 [===>..........................] - ETA: 0s - loss: 0.0237 - acc: 1.0000
+7228/7228 [==============================] - 0s 3us/step - loss: 0.0211 - acc: 0.9997
+Epoch 1/10
+
+1000/8750 [==>...........................] - ETA: 0s - loss: 0.4828 - acc: 0.8440
+8750/8750 [==============================] - 0s 2us/step - loss: 0.4770 - acc: 0.8351
+Epoch 2/10
+
+1000/8750 [==>...........................] - ETA: 0s - loss: 0.4540 - acc: 0.8330
+8750/8750 [==============================] - 0s 3us/step - loss: 0.4264 - acc: 0.8369
+Epoch 3/10
+
+1000/8750 [==>...........................] - ETA: 0s - loss: 0.4531 - acc: 0.8240
+8750/8750 [==============================] - 0s 3us/step - loss: 0.3851 - acc: 0.8387
+Epoch 4/10
+
+1000/8750 [==>...........................] - ETA: 0s - loss: 0.4062 - acc: 0.8310
+8750/8750 [==============================] - 0s 3us/step - loss: 0.3628 - acc: 0.8413
+Epoch 5/10
+
+1000/8750 [==>...........................] - ETA: 0s - loss: 0.3746 - acc: 0.8390
+8750/8750 [==============================] - 0s 3us/step - loss: 0.3517 - acc: 0.8415
+Epoch 6/10
+
+1000/8750 [==>...........................] - ETA: 0s - loss: 0.3544 - acc: 0.8340
+8750/8750 [==============================] - 0s 3us/step - loss: 0.3464 - acc: 0.8414
+Epoch 7/10
+
+1000/8750 [==>...........................] - ETA: 0s - loss: 0.3322 - acc: 0.8570
+8750/8750 [==============================] - 0s 3us/step - loss: 0.3439 - acc: 0.8435
+Epoch 8/10
+
+1000/8750 [==>...........................] - ETA: 0s - loss: 0.3244 - acc: 0.8570
+8750/8750 [==============================] - 0s 3us/step - loss: 0.3418 - acc: 0.8416
+Epoch 9/10
+
+1000/8750 [==>...........................] - ETA: 0s - loss: 0.3349 - acc: 0.8500
+8750/8750 [==============================] - 0s 3us/step - loss: 0.3403 - acc: 0.8434
+Epoch 10/10
+
+1000/8750 [==>...........................] - ETA: 0s - loss: 0.3542 - acc: 0.8290
+8750/8750 [==============================] - 0s 2us/step - loss: 0.3394 - acc: 0.8435
+Epoch 1/10
+
+1000/7268 [===>..........................] - ETA: 0s - loss: 0.1151 - acc: 1.0000
+7268/7268 [==============================] - 0s 3us/step - loss: 0.1105 - acc: 1.0000
+Epoch 2/10
+
+1000/7268 [===>..........................] - ETA: 0s - loss: 0.1003 - acc: 1.0000
+7268/7268 [==============================] - 0s 3us/step - loss: 0.0931 - acc: 1.0000
+Epoch 3/10
+
+1000/7268 [===>..........................] - ETA: 0s - loss: 0.0852 - acc: 1.0000
+7268/7268 [==============================] - 0s 3us/step - loss: 0.0740 - acc: 0.9999
+Epoch 4/10
+
+1000/7268 [===>..........................] - ETA: 0s - loss: 0.0645 - acc: 0.9980
+7268/7268 [==============================] - 0s 3us/step - loss: 0.0595 - acc: 0.9993
+Epoch 5/10
+
+1000/7268 [===>..........................] - ETA: 0s - loss: 0.0532 - acc: 1.0000
+7268/7268 [==============================] - 0s 3us/step - loss: 0.0488 - acc: 0.9994
+Epoch 6/10
+
+1000/7268 [===>..........................] - ETA: 0s - loss: 0.0449 - acc: 0.9980
+7268/7268 [==============================] - 0s 3us/step - loss: 0.0410 - acc: 0.9996
+Epoch 7/10
+
+1000/7268 [===>..........................] - ETA: 0s - loss: 0.0351 - acc: 1.0000
+7268/7268 [==============================] - 0s 3us/step - loss: 0.0350 - acc: 1.0000
+Epoch 8/10
+
+1000/7268 [===>..........................] - ETA: 0s - loss: 0.0342 - acc: 1.0000
+7268/7268 [==============================] - 0s 3us/step - loss: 0.0304 - acc: 1.0000
+Epoch 9/10
+
+1000/7268 [===>..........................] - ETA: 0s - loss: 0.0279 - acc: 1.0000
+7268/7268 [==============================] - 0s 3us/step - loss: 0.0267 - acc: 1.0000
+Epoch 10/10
+
+1000/7268 [===>..........................] - ETA: 0s - loss: 0.0238 - acc: 1.0000
+7268/7268 [==============================] - 0s 3us/step - loss: 0.0237 - acc: 1.0000
+
+The accuracy for the model Semi-Supervised Neural Network is 90.29%
+The minority class recall for the model Semi-Supervised Neural Network is 73.50%
+The minority class f1 score for the model Semi-Supervised Neural Network is 48.42%
+The minority class precision for the model Semi-Supervised Neural Network is 36.10%
+The confusion matrix is given by: 
+[[85526  8050]
+ [ 1639  4547]]
+
+The accuracy for the model Rule Classifier - Skope Rules - Model 1 is 81.28%
+The minority class recall for the model Rule Classifier - Skope Rules - Model 1 is 67.91%
+The minority class f1 score for the model Rule Classifier - Skope Rules - Model 1 is 67.53%
+The minority class precision for the model Rule Classifier - Skope Rules - Model 1 is 67.16%
+The confusion matrix is given by: 
+[[8653 1333]
+ [1288 2726]]
+
+The accuracy for the model Rule Classifier - Skope Rules - Model 2 is 81.28%
+The minority class recall for the model Rule Classifier - Skope Rules - Model 2 is 67.91%
+The minority class f1 score for the model Rule Classifier - Skope Rules - Model 2 is 67.53%
+The minority class precision for the model Rule Classifier - Skope Rules - Model 2 is 67.16%
+The confusion matrix is given by: 
+[[8653 1333]
+ [1288 2726]]
+
+The accuracy for the model Rule Classifier - Skope Rules - Model 3 is 80.96%
+The minority class recall for the model Rule Classifier - Skope Rules - Model 3 is 70.48%
+The minority class f1 score for the model Rule Classifier - Skope Rules - Model 3 is 67.98%
+The minority class precision for the model Rule Classifier - Skope Rules - Model 3 is 65.65%
+The confusion matrix is given by: 
+[[8506 1480]
+ [1185 2829]]
+
+As per the results, Skope Rules model 1 will be chosen for training
+
+Printing the results per fold for the Skope Rules model
+
+Fold 1: Accuracy  76.73%
+Fold 1: Recall  79.43%
+Fold 1: Precision  57.29%
+Fold 1: ROC area  82.46%
+
+Fold 2: Accuracy  77.94%
+Fold 2: Recall  78.43%
+Fold 2: Precision  58.08%
+Fold 2: ROC area  82.47%
+
+Fold 3: Accuracy  81.27%
+Fold 3: Recall  66.72%
+Fold 3: Precision  66.34%
+Fold 3: ROC area  78.26%
+
+Fold 4: Accuracy  79.93%
+Fold 4: Recall  71.24%
+Fold 4: Precision  64.73%
+Fold 4: ROC area  79.45%
+
+Fold 5: Accuracy  80.96%
+Fold 5: Recall  71.29%
+Fold 5: Precision  64.91%
+Fold 5: ROC area  79.91%
+
+Fold 6: Accuracy  80.04%
+Fold 6: Recall  67.02%
+Fold 6: Precision  64.47%
+Fold 6: ROC area  77.68%
+
+Fold 7: Accuracy  76.16%
+Fold 7: Recall  77.32%
+Fold 7: Precision  55.72%
+Fold 7: ROC area  80.40%
+
+Fold 8: Accuracy  78.57%
+Fold 8: Recall  76.89%
+Fold 8: Precision  59.23%
+Fold 8: ROC area  81.48%
+
+Fold 9: Accuracy  80.73%
+Fold 9: Recall  71.84%
+Fold 9: Precision  64.98%
+Fold 9: ROC area  80.32%
+
+Fold 10: Accuracy  80.66%
+Fold 10: Recall  68.45%
+Fold 10: Precision  65.38%
+Fold 10: ROC area  78.54%
+
+The accuracy for the model Skope Rules is 87.51%
+The minority class recall for the model Skope Rules is 70.01%
+The minority class f1 score for the model Skope Rules is 41.01%
+The minority class precision for the model Skope Rules is 29.00%
+The confusion matrix is given by: 
+[[82973 10603]
+ [ 1855  4331]]
+('Age > 0.33888889849185944 and OccupationCode > 0.3255113214254379', (0.7580615562888956, 0.47370105288521813, 6))
+('Age > 0.33888889849185944 and CapitalGains <= 0.07073500007390976 and OccupationCode > 0.19287504255771637', (0.6329532619806674, 0.5339787787214668, 4))
+('Age > 0.32777778804302216 and OccupationCode > 0.39162690937519073', (0.7588271732397275, 0.45706112803930105, 1))
+('Age > 0.33888889849185944 and OccupationCode > 0.39162690937519073', (0.7659686414816373, 0.453125, 1))
+('Age > 0.32777778804302216 and OccupationCode > 0.21098510175943375 and StockDividends <= 0.0008749999979045242', (0.5995007132667618, 0.4206180407856875, 1))
+('Age > 0.32777778804302216 and OccupationCode > 0.19287504255771637 and StockDividends <= 0.000885000015841797', (0.5974256963634389, 0.4192329790707881, 3))
+('Age > 0.32777778804302216 and OccupationCode > 0.19287504255771637 and StockDividends <= 0.0008749999979045242', (0.5956894451888606, 0.4171034331982876, 2))
+('Age > 0.33888889849185944 and OccupationCode > 0.21098510175943375 and StockDividends <= 0.000885000015841797', (0.6018756895917616, 0.4099448897795591, 1))
+('Age > 0.33888889849185944 and OccupationCode > 0.19287504255771637 and StockDividends <= 0.000885000015841797', (0.6030266678970194, 0.40836093232518905, 1))
+('Age > 0.33888889849185944 and OccupationCode > 0.22294022142887115 and StockDividends <= 0.000885000015841797', (0.6089411764705882, 0.40500782472613456, 1))
+('Age > 0.32777778804302216 and OccupationCode > 0.19287504255771637 and StockDividends <= 0.0004599999956553802', (0.5918669439679892, 0.39968084595135406, 3))
+('Age > 0.32777778804302216 and OccupationCode > 0.21098510175943375 and StockDividends <= 0.00040499999886378646', (0.5915597694738799, 0.39949780288763337, 1))
+('Age > 0.32777778804302216 and OccupationCode > 0.19287504255771637 and StockDividends <= 0.00040499999886378646', (0.5923649434684248, 0.398571205946033, 2))
+('Age > 0.32777778804302216 and OccupationCode > 0.19287504255771637 and StockDividends <= 0.0004749999934574589', (0.5902946292694915, 0.39861155155919087, 3))
+('Age > 0.33888889849185944 and OccupationCode > 0.19287504255771637 and StockDividends <= 0.0004599999956553802', (0.5992934886385335, 0.3931233168409845, 1))
+('Age > 0.33888889849185944 and OccupationCode > 0.19287504255771637 and StockDividends <= 0.00043000000005122274', (0.5991387559808612, 0.3928100884622624, 1))
+('Age > 0.33888889849185944 and OccupationCode > 0.19287504255771637 and StockDividends <= 0.0004749999934574589', (0.6023324729949335, 0.3913178487144454, 1))
+('Age > 0.33888889849185944 and OccupationCode > 0.19287504255771637 and StockDividends <= 0.0004950000147800893', (0.5964176829268293, 0.39103004559935034, 1))
+('Age > 0.32777778804302216 and OccupationCode > 0.21098510175943375 and StockDividends <= 0.000295000005280599', (0.5925856051315913, 0.3917435769518583, 1))
+('Age > 0.32777778804302216 and OccupationCode > 0.19287504255771637 and StockDividends <= 0.000295000005280599', (0.5897159018229451, 0.3929756568440101, 3))
+('Age > 0.32777778804302216 and OccupationCode > 0.19287504255771637 and StockDividends <= 0.0002649999951245263', (0.5899552435196991, 0.39282660068316616, 7))
+('Age > 0.33888889849185944 and OccupationCode > 0.19287504255771637 and StockDividends <= 0.00040499999886378646', (0.5957878498498979, 0.38950045896761454, 2))
+('Age > 0.33888889849185944 and OccupationCode > 0.19287504255771637 and StockDividends <= 0.000415000002249144', (0.5974527209571594, 0.38736315295589613, 1))
+('Age > 0.33888889849185944 and OccupationCode > 0.19287504255771637 and StockDividends <= 0.000295000005280599', (0.5976819053900045, 0.38473990591235524, 8))
+('Age > 0.33888889849185944 and OccupationCode > 0.19287504255771637 and StockDividends <= 0.0002649999951245263', (0.5962753113776234, 0.38385154152613277, 15))
+('Age > 0.33888889849185944 and OccupationCode > 0.21098510175943375 and StockDividends <= 0.0002649999951245263', (0.5970410492825486, 0.3823337276354584, 3))
+('Age > 0.32777778804302216 and OccupationCode > 0.19287504255771637 and StockDividends <= 0.00014500000543193892', (0.5865964983757355, 0.381968603773535, 2))
+('Age > 0.32777778804302216 and OccupationCode > 0.21098510175943375 and StockDividends <= 0.00017500000103609636', (0.5873259721555449, 0.3813828792318723, 1))
+('Age > 0.33888889849185944 and OccupationCode > 0.19287504255771637 and StockDividends <= 0.00017500000103609636', (0.5953565637781099, 0.3759515134143391, 4))
+('Age > 0.32777778804302216 and OccupationCode > 0.22294022142887115 and StockDividends <= 0.00014500000543193892', (0.5950585433617781, 0.37507036087310025, 1))
+('Age > 0.33888889849185944 and OccupationCode > 0.21098510175943375 and StockDividends <= 0.00014500000543193892', (0.5945683991585221, 0.3724529726368242, 3))
+('Age > 0.33888889849185944 and OccupationCode > 0.19287504255771637 and StockDividends <= 0.00014500000543193892', (0.5929806709304836, 0.37282727881586203, 14))
+('Age > 0.33888889849185944 and OccupationCode > 0.19287504255771637 and StockDividends <= 0.0001249999986612238', (0.5918854415274463, 0.3705409948328457, 1))
+('Age > 0.32777778804302216 and OccupationCode > 0.19287504255771637 and StockDividends > 0.00014500000543193892', (0.8193639123411108, 0.29256187530643324, 2))
+('Age > 0.32777778804302216 and OccupationCode > 0.21098510175943375 and StockDividends > 0.00017500000103609636', (0.824290780141844, 0.2898559760583578, 1))
+('Age > 0.33888889849185944 and OccupationCode > 0.19287504255771637 and StockDividends > 0.0001249999986612238', (0.824477506199079, 0.28979642657037913, 1))
+('Age > 0.33888889849185944 and OccupationCode > 0.19287504255771637 and StockDividends > 0.00014500000543193892', (0.8262629633200241, 0.28761234425289445, 14))
+('Age > 0.33888889849185944 and OccupationCode > 0.21098510175943375 and StockDividends > 0.00014500000543193892', (0.8254787195334413, 0.2873093678647693, 3))
+('Age > 0.32777778804302216 and OccupationCode > 0.22294022142887115 and StockDividends > 0.00014500000543193892', (0.8254912565350639, 0.2863843892676215, 1))
+('Age > 0.33888889849185944 and OccupationCode > 0.19287504255771637 and StockDividends > 0.00017500000103609636', (0.8253246096573672, 0.28455035006971263, 4))
+('Age > 0.32777778804302216 and OccupationCode > 0.19287504255771637 and StockDividends > 0.0002649999951245263', (0.8282374973249376, 0.2804031654503101, 7))
+('Age > 0.32777778804302216 and OccupationCode > 0.19287504255771637 and StockDividends > 0.000295000005280599', (0.8267373007584414, 0.27995157575131413, 3))
+('Age > 0.32777778804302216 and OccupationCode > 0.21098510175943375 and StockDividends > 0.000295000005280599', (0.8292818704768974, 0.2786854577201297, 1))
+('Age > 0.33888889849185944 and OccupationCode > 0.19287504255771637 and StockDividends > 0.0002649999951245263', (0.8301220038972548, 0.27708697765546, 15))
+('Age > 0.33888889849185944 and OccupationCode > 0.19287504255771637 and StockDividends > 0.000295000005280599', (0.830141113538927, 0.2765708261872993, 8))
+('Age > 0.33888889849185944 and OccupationCode > 0.21098510175943375 and StockDividends > 0.0002649999951245263', (0.8312231871560821, 0.2751524150756574, 3))
+('Age > 0.32777778804302216 and OccupationCode > 0.19287504255771637 and StockDividends > 0.00040499999886378646', (0.8305568163297989, 0.2743689827548106, 2))
+('Age > 0.32777778804302216 and OccupationCode > 0.21098510175943375 and StockDividends > 0.00040499999886378646', (0.8302604067667744, 0.27419962335216574, 1))
+('Age > 0.32777778804302216 and OccupationCode > 0.19287504255771637 and StockDividends > 0.0004599999956553802', (0.829527998679604, 0.2737504752331793, 3))
+('Age > 0.32777778804302216 and OccupationCode > 0.19287504255771637 and StockDividends > 0.0004749999934574589', (0.8304277039185107, 0.2734034341741089, 3))
+('Age > 0.33888889849185944 and OccupationCode > 0.19287504255771637 and StockDividends > 0.000415000002249144', (0.834739263803681, 0.27238035658429777, 1))
+('Age > 0.33888889849185944 and OccupationCode > 0.19287504255771637 and StockDividends > 0.00040499999886378646', (0.8316926385026455, 0.2724605113304296, 2))
+('Age > 0.33888889849185944 and OccupationCode > 0.19287504255771637 and StockDividends > 0.0004950000147800893', (0.8380621501640609, 0.27122243737897433, 1))
+('Age > 0.33888889849185944 and OccupationCode > 0.19287504255771637 and StockDividends > 0.0004599999956553802', (0.832786252172234, 0.2701196217197971, 1))
+('Age > 0.33888889849185944 and OccupationCode > 0.19287504255771637 and StockDividends > 0.00043000000005122274', (0.8274661508704062, 0.2683982683982684, 1))
+('Age > 0.33888889849185944 and OccupationCode > 0.19287504255771637 and StockDividends > 0.0004749999934574589', (0.8328155339805825, 0.26636442677928207, 1))
+('Age > 0.32777778804302216 and OccupationCode > 0.19287504255771637 and StockDividends > 0.0008749999979045242', (0.8410577845232624, 0.2560839854196901, 2))
+('Age > 0.32777778804302216 and OccupationCode > 0.19287504255771637 and StockDividends > 0.000885000015841797', (0.8405542136571218, 0.25488125600654854, 3))
+('Age > 0.33888889849185944 and OccupationCode > 0.21098510175943375 and StockDividends > 0.000885000015841797', (0.8403501458941226, 0.25250501002004005, 1))
+('Age > 0.32777778804302216 and OccupationCode > 0.21098510175943375 and StockDividends > 0.0008749999979045242', (0.8378995433789954, 0.2525334667834355, 1))
+('Age > 0.33888889849185944 and OccupationCode > 0.19287504255771637 and StockDividends > 0.000885000015841797', (0.8381430363864492, 0.2504530400549897, 1))
+('Age > 0.33888889849185944 and OccupationCode > 0.22294022142887115 and StockDividends > 0.000885000015841797', (0.8454095893356267, 0.24613458528951487, 1))
+('Age > 0.32777778804302216 and OccupationCode <= 0.39162690937519073 and OccupationCode > 0.19287504255771637', (0.537722695584818, 0.2158447857720291, 1))
+('Age > 0.33888889849185944 and OccupationCode <= 0.3255113214254379 and OccupationCode > 0.17949891835451126', (0.5137900355871886, 0.21690140845070421, 1))
+('Age > 0.33888889849185944 and OccupationCode <= 0.39162690937519073 and OccupationCode > 0.19287504255771637', (0.5430771699021338, 0.21071962151394422, 1))
+
+The accuracy for the model Ada Boost Classifier - Model 1 is 85.93%
+The minority class recall for the model Ada Boost Classifier - Model 1 is 68.96%
+The minority class f1 score for the model Ada Boost Classifier - Model 1 is 73.75%
+The minority class precision for the model Ada Boost Classifier - Model 1 is 79.27%
+The confusion matrix is given by: 
+[[9262  724]
+ [1246 2768]]
+
+The accuracy for the model Ada Boost Classifier - Model 2 is 85.44%
+The minority class recall for the model Ada Boost Classifier - Model 2 is 67.66%
+The minority class f1 score for the model Ada Boost Classifier - Model 2 is 72.72%
+The minority class precision for the model Ada Boost Classifier - Model 2 is 78.59%
+The confusion matrix is given by: 
+[[9246  740]
+ [1298 2716]]
+
+The accuracy for the model Ada Boost Classifier - Model 3 is 85.61%
+The minority class recall for the model Ada Boost Classifier - Model 3 is 68.98%
+The minority class f1 score for the model Ada Boost Classifier - Model 3 is 73.32%
+The minority class precision for the model Ada Boost Classifier - Model 3 is 78.24%
+The confusion matrix is given by: 
+[[9216  770]
+ [1245 2769]]
+
+As per the results, Model 1 will be chosen for training and testing
+
+Printing the results per fold for the Ada Boost Classifier model
+
+Fold 1: Accuracy  85.84%
+Fold 1: Recall  69.25%
+Fold 1: Precision  78.65%
+Fold 1: ROC area  91.91%
+
+Fold 2: Accuracy  85.59%
+Fold 2: Recall  68.80%
+Fold 2: Precision  78.14%
+Fold 2: ROC area  91.82%
+
+Fold 3: Accuracy  85.49%
+Fold 3: Recall  68.55%
+Fold 3: Precision  77.99%
+Fold 3: ROC area  91.69%
+
+Fold 4: Accuracy  85.56%
+Fold 4: Recall  68.80%
+Fold 4: Precision  78.05%
+Fold 4: ROC area  91.56%
+
+Fold 5: Accuracy  85.89%
+Fold 5: Recall  71.15%
+Fold 5: Precision  77.59%
+Fold 5: ROC area  92.28%
+
+Fold 6: Accuracy  85.10%
+Fold 6: Recall  67.80%
+Fold 6: Precision  77.26%
+Fold 6: ROC area  91.00%
+
+Fold 7: Accuracy  85.33%
+Fold 7: Recall  69.05%
+Fold 7: Precision  77.19%
+Fold 7: ROC area  91.48%
+
+Fold 8: Accuracy  85.14%
+Fold 8: Recall  67.30%
+Fold 8: Precision  77.71%
+Fold 8: ROC area  91.46%
+
+Fold 9: Accuracy  85.56%
+Fold 9: Recall  69.70%
+Fold 9: Precision  77.49%
+Fold 9: ROC area  91.80%
+
+Fold 10: Accuracy  85.61%
+Fold 10: Recall  68.70%
+Fold 10: Precision  78.29%
+Fold 10: ROC area  91.61%
+
+The accuracy for the model Ada Boost Classifier is 92.58%
+The minority class recall for the model Ada Boost Classifier is 69.29%
+The minority class f1 score for the model Ada Boost Classifier is 53.67%
+The minority class precision for the model Ada Boost Classifier is 43.80%
+The confusion matrix is given by: 
+[[88076  5500]
+ [ 1900  4286]]
+
+Printing stats for models Decision Tree and Nearest Neighbours
+The Wilcoxon statistic for accuracy is given by 0.0
+We reject the null hypothesis that the difference in accuracy of the models is not significantly different
+The Wilcoxon statistic for recall is given by 0.0
+We reject the null hypothesis that the difference in recall of the models is not significantly different
+
+Printing stats for models Decision Tree and Skope Rules
+The Wilcoxon statistic for accuracy is given by 0.0
+We reject the null hypothesis that the difference in accuracy of the models is not significantly different
+The Wilcoxon statistic for recall is given by 0.0
+We reject the null hypothesis that the difference in recall of the models is not significantly different
+
+Printing stats for models Decision Tree and Ada Boost Classifier
+The Wilcoxon statistic for accuracy is given by 0.0
+We reject the null hypothesis that the difference in accuracy of the models is not significantly different
+The Wilcoxon statistic for recall is given by 1.0
+We reject the null hypothesis that the difference in recall of the models is not significantly different
+
+Printing stats for models Nearest Neighbours and Skope Rules
+The Wilcoxon statistic for accuracy is given by 0.0
+We reject the null hypothesis that the difference in accuracy of the models is not significantly different
+The Wilcoxon statistic for recall is given by 0.0
+We reject the null hypothesis that the difference in recall of the models is not significantly different
+
+Printing stats for models Nearest Neighbours and Ada Boost Classifier
+The Wilcoxon statistic for accuracy is given by 0.0
+We reject the null hypothesis that the difference in accuracy of the models is not significantly different
+The Wilcoxon statistic for recall is given by 0.0
+We reject the null hypothesis that the difference in recall of the models is not significantly different
+
+Printing stats for models Skope Rule and Ada Boost Classifier
+The Wilcoxon statistic for accuracy is given by 0.0
+We reject the null hypothesis that the difference in accuracy of the models is not significantly different
+The Wilcoxon statistic for recall is given by 9.0
+The recall of the models belongs is not significantly different
+
+The accuracy for the model Overall Predictions is 92.37%
+The minority class recall for the model Overall Predictions is 69.25%
+The minority class f1 score for the model Overall Predictions is 52.97%
+The minority class precision for the model Overall Predictions is 42.88%
+The confusion matrix is given by: 
+[[87870  5706]
+ [ 1902  4284]]
+The total running time of this script is 500.3 seconds
+
+Process finished with exit code 0

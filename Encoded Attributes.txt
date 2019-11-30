@@ -1,0 +1,44 @@
+0 "Age"
+1 "Class: Not Employed"
+2 "Class : Private"
+3 "Class: Self-Employed"
+4 "Class: Local Governmnt"
+5 "Class: State Government"
+6 "Class: Federal Government"
+7 "Industry Code",
+8 "Occupation Code"
+9 "Education: Less than High School:"
+10 "Education: College", 
+11 "Education: Bachelors"
+12 "Education: Masters Degree", 
+13 "Education: Prof Degree"
+14 "Education: Doctorate"
+15 "Wage"
+16 "EnrolledEudcation: Not in School"
+17 "EnrolledEducation: High School"
+18 "EnrolledEducation:College or University"
+19 "MarriageStatus: Not Married"
+20 "MarriageStatus: Married"
+21 "MarriedStatus: Divorced"
+22 "Married Status: Widowed"
+23 "Race: Asian or Pacific Islander"
+24 "Race: White", 
+25 "Race: Other"
+26 "Race: Amer Indian Aleut or Eskimo"
+27 "Race: Black", 
+28 "Sex: Male", 
+29 "Sex: Female"
+30 "EmploymentStatus: Not Employed", 
+31 "EmploymentStatus: Part Time", 
+32 "EmploymentStatus: Full Time",
+33 "Capital Gains"
+34 "Capital Losses"
+35 "Stock Dividends"
+36 "TaxFilerStatus: Head of Household"
+37 "TaxFilerStatus: Joint"
+38 "TaxFilerStatus: Single"
+39 "TaxFilerStatus: Nonfiler"
+40 "Weight"
+41 "CountryOfBirthOfParents: Has American Parent"
+42 "CountryOfBirthOfParents: American"
+43 "WeeksWorked"
