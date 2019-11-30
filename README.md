@@ -1,6 +1,6 @@
 Author: James Dickens, s.n. 7118781
 
-CSI 5155: Machine Learning, Course taught by Dr. Herna Viktor.
+Final Project - CSI 5155: Machine Learning, Course taught by Dr. Herna Viktor.
 
 This is my code for the machine learning task of binary classification of the data available at 
 http://archive.ics.uci.edu/ml/datasets/Census-Income+(KDD), which consists of 
