@@ -1,307 +1,568 @@
-|--- OccupationCode <= 0.16
-|   |--- CapitalGains <= 0.06
-|   |   |--- NonFiler <= 0.50
-|   |   |   |--- StockDividends <= 0.00
-|   |   |   |   |--- OccupationCode <= 0.08
-|   |   |   |   |   |--- Age <= 0.36
-|   |   |   |   |   |   |--- Bachelors <= 0.50
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |   |--- Bachelors >  0.50
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |--- Age >  0.36
-|   |   |   |   |   |   |--- Masters <= 0.50
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |   |--- Masters >  0.50
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |--- OccupationCode >  0.08
+|--- OccupationCode <= 0.19
+|   |--- CapitalGains <= 0.05
+|   |   |--- OccupationCode <= 0.08
+|   |   |   |--- StockDividends <= 0.04
+|   |   |   |   |--- StockDividends <= 0.00
 |   |   |   |   |   |--- CapitalLosses <= 0.41
-|   |   |   |   |   |   |--- JointFiler <= 0.50
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |   |--- JointFiler >  0.50
-|   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |--- Masters <= 0.50
+|   |   |   |   |   |   |   |--- Bachelors <= 0.50
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- Bachelors >  0.50
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |--- Masters >  0.50
+|   |   |   |   |   |   |   |--- WeeksWorked <= 0.90
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- WeeksWorked >  0.90
+|   |   |   |   |   |   |   |   |--- class: 0.0
 |   |   |   |   |   |--- CapitalLosses >  0.41
-|   |   |   |   |   |   |--- CapitalLosses <= 0.52
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |   |--- CapitalLosses >  0.52
-|   |   |   |   |   |   |   |--- class: 1.0
-|   |   |   |--- StockDividends >  0.00
-|   |   |   |   |--- StockDividends <= 0.10
+|   |   |   |   |   |   |--- CapitalLosses <= 0.43
+|   |   |   |   |   |   |   |--- JointFiler <= 0.50
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- JointFiler >  0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- CapitalLosses >  0.43
+|   |   |   |   |   |   |   |--- CapitalLosses <= 0.48
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- CapitalLosses >  0.48
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |--- StockDividends >  0.00
 |   |   |   |   |   |--- WeeksWorked <= 0.49
-|   |   |   |   |   |   |--- StockDividends <= 0.04
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |   |--- StockDividends >  0.04
-|   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |--- ProfDegree <= 0.50
+|   |   |   |   |   |   |   |--- CapitalLosses <= 0.48
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- CapitalLosses >  0.48
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- ProfDegree >  0.50
+|   |   |   |   |   |   |   |--- Age <= 0.71
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- Age >  0.71
+|   |   |   |   |   |   |   |   |--- class: 0.0
 |   |   |   |   |   |--- WeeksWorked >  0.49
-|   |   |   |   |   |   |--- StockDividends <= 0.01
+|   |   |   |   |   |   |--- IndustryCode <= 0.36
+|   |   |   |   |   |   |   |--- CapitalLosses <= 0.41
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- CapitalLosses >  0.41
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- IndustryCode >  0.36
+|   |   |   |   |   |   |   |--- OccupationCode <= 0.04
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- OccupationCode >  0.04
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |--- StockDividends >  0.04
+|   |   |   |   |--- StockDividends <= 0.14
+|   |   |   |   |   |--- WeeksWorked <= 0.34
+|   |   |   |   |   |   |--- StockDividends <= 0.10
+|   |   |   |   |   |   |   |--- Masters <= 0.50
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- Masters >  0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- StockDividends >  0.10
+|   |   |   |   |   |   |   |--- Age <= 0.81
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- Age >  0.81
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |--- WeeksWorked >  0.34
+|   |   |   |   |   |   |--- IsWidowed <= 0.50
+|   |   |   |   |   |   |   |--- IndustryCode <= 0.07
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- IndustryCode >  0.07
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- IsWidowed >  0.50
 |   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |   |--- StockDividends >  0.01
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |--- StockDividends >  0.10
+|   |   |   |   |--- StockDividends >  0.14
 |   |   |   |   |   |--- StockDividends <= 0.31
-|   |   |   |   |   |   |--- StockDividends <= 0.18
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |   |--- StockDividends >  0.18
-|   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |--- College <= 0.50
+|   |   |   |   |   |   |   |--- OccupationCode <= 0.05
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- OccupationCode >  0.05
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |--- College >  0.50
+|   |   |   |   |   |   |   |--- Age <= 0.77
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- Age >  0.77
+|   |   |   |   |   |   |   |   |--- class: 1.0
 |   |   |   |   |   |--- StockDividends >  0.31
 |   |   |   |   |   |   |--- IsDivorced <= 0.50
 |   |   |   |   |   |   |   |--- class: 1.0
 |   |   |   |   |   |   |--- IsDivorced >  0.50
-|   |   |   |   |   |   |   |--- class: 1.0
-|   |   |--- NonFiler >  0.50
-|   |   |   |--- Age <= 0.23
-|   |   |   |   |--- class: 0.0
-|   |   |   |--- Age >  0.23
-|   |   |   |   |--- Doctorate <= 0.50
-|   |   |   |   |   |--- Bachelors <= 0.50
-|   |   |   |   |   |   |--- StockDividends <= 0.01
+|   |   |   |   |   |   |   |--- StockDividends <= 0.38
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- StockDividends >  0.38
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |--- OccupationCode >  0.08
+|   |   |   |--- StockDividends <= 0.00
+|   |   |   |   |--- Age <= 0.39
+|   |   |   |   |   |--- CapitalLosses <= 0.48
+|   |   |   |   |   |   |--- IndustryCode <= 0.33
+|   |   |   |   |   |   |   |--- IsNotMarried <= 0.50
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- IsNotMarried >  0.50
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |--- IndustryCode >  0.33
+|   |   |   |   |   |   |   |--- IsNotMarried <= 0.50
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- IsNotMarried >  0.50
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |--- CapitalLosses >  0.48
+|   |   |   |   |   |   |--- IndustryCode <= 0.10
 |   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |   |--- StockDividends >  0.01
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |--- Bachelors >  0.50
-|   |   |   |   |   |   |--- Age <= 0.53
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |   |--- Age >  0.53
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |--- Doctorate >  0.50
-|   |   |   |   |   |--- Age <= 0.82
-|   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |--- Age >  0.82
-|   |   |   |   |   |   |--- Age <= 0.85
-|   |   |   |   |   |   |   |--- class: 1.0
-|   |   |   |   |   |   |--- Age >  0.85
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |--- CapitalGains >  0.06
-|   |   |--- CapitalGains <= 0.10
-|   |   |   |--- CapitalGains <= 0.06
-|   |   |   |   |--- Bachelors <= 0.50
-|   |   |   |   |   |--- class: 1.0
-|   |   |   |   |--- Bachelors >  0.50
-|   |   |   |   |   |--- class: 0.0
-|   |   |   |--- CapitalGains >  0.06
-|   |   |   |   |--- SingleFiler <= 0.50
-|   |   |   |   |   |--- CapitalGains <= 0.07
+|   |   |   |   |   |   |--- IndustryCode >  0.10
+|   |   |   |   |   |   |   |--- IsWidowed <= 0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- IsWidowed >  0.50
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |--- Age >  0.39
+|   |   |   |   |   |--- WeeksWorked <= 0.72
+|   |   |   |   |   |   |--- CapitalLosses <= 0.41
+|   |   |   |   |   |   |   |--- Doctorate <= 0.50
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- Doctorate >  0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- CapitalLosses >  0.41
+|   |   |   |   |   |   |   |--- CapitalLosses <= 0.42
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- CapitalLosses >  0.42
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |--- WeeksWorked >  0.72
+|   |   |   |   |   |   |--- IndustryCode <= 0.33
+|   |   |   |   |   |   |   |--- Masters <= 0.50
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- Masters >  0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- IndustryCode >  0.33
+|   |   |   |   |   |   |   |--- College <= 0.50
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- College >  0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |--- StockDividends >  0.00
+|   |   |   |   |--- IndustryCode <= 0.18
+|   |   |   |   |   |--- StockDividends <= 0.01
 |   |   |   |   |   |   |--- Age <= 0.38
-|   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- OccupationCode <= 0.18
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- OccupationCode >  0.18
+|   |   |   |   |   |   |   |   |--- class: 0.0
 |   |   |   |   |   |   |--- Age >  0.38
+|   |   |   |   |   |   |   |--- IndustryCode <= 0.06
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- IndustryCode >  0.06
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |--- StockDividends >  0.01
+|   |   |   |   |   |   |--- IsWidowed <= 0.50
+|   |   |   |   |   |   |   |--- WeeksWorked <= 0.88
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- WeeksWorked >  0.88
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- IsWidowed >  0.50
 |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |--- IndustryCode >  0.18
+|   |   |   |   |   |--- StockDividends <= 0.01
+|   |   |   |   |   |   |--- IndustryCode <= 0.29
+|   |   |   |   |   |   |   |--- Age <= 0.49
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- Age >  0.49
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- IndustryCode >  0.29
+|   |   |   |   |   |   |   |--- StockDividends <= 0.00
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- StockDividends >  0.00
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |--- StockDividends >  0.01
+|   |   |   |   |   |   |--- Age <= 0.45
+|   |   |   |   |   |   |   |--- StockDividends <= 0.05
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- StockDividends >  0.05
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- Age >  0.45
+|   |   |   |   |   |   |   |--- WeeksWorked <= 0.62
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- WeeksWorked >  0.62
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |--- CapitalGains >  0.05
+|   |   |--- CapitalGains <= 0.10
+|   |   |   |--- CapitalGains <= 0.05
+|   |   |   |   |--- class: 1.0
+|   |   |   |--- CapitalGains >  0.05
+|   |   |   |   |--- CapitalGains <= 0.07
+|   |   |   |   |   |--- CapitalGains <= 0.07
+|   |   |   |   |   |   |--- CapitalGains <= 0.06
+|   |   |   |   |   |   |   |--- IndustryCode <= 0.30
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- IndustryCode >  0.30
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- CapitalGains >  0.06
+|   |   |   |   |   |   |   |--- Age <= 0.71
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- Age >  0.71
+|   |   |   |   |   |   |   |   |--- class: 1.0
 |   |   |   |   |   |--- CapitalGains >  0.07
-|   |   |   |   |   |   |--- CapitalGains <= 0.07
-|   |   |   |   |   |   |   |--- class: 1.0
-|   |   |   |   |   |   |--- CapitalGains >  0.07
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |--- SingleFiler >  0.50
-|   |   |   |   |   |--- IndustryCode <= 0.12
-|   |   |   |   |   |   |--- CapitalGains <= 0.07
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |   |--- CapitalGains >  0.07
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |--- IndustryCode >  0.12
 |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |--- CapitalGains >  0.07
+|   |   |   |   |   |--- OccupationCode <= 0.11
+|   |   |   |   |   |   |--- StockDividends <= 0.00
+|   |   |   |   |   |   |   |--- Masters <= 0.50
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- Masters >  0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- StockDividends >  0.00
+|   |   |   |   |   |   |   |--- OccupationCode <= 0.03
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- OccupationCode >  0.03
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |--- OccupationCode >  0.11
+|   |   |   |   |   |   |--- CapitalGains <= 0.08
+|   |   |   |   |   |   |   |--- Age <= 0.41
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- Age >  0.41
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- CapitalGains >  0.08
+|   |   |   |   |   |   |   |--- RaceWhite <= 0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- RaceWhite >  0.50
+|   |   |   |   |   |   |   |   |--- class: 0.0
 |   |   |--- CapitalGains >  0.10
-|   |   |   |--- WeeksWorked <= 0.60
-|   |   |   |   |--- Age <= 0.67
-|   |   |   |   |   |--- JointFiler <= 0.50
-|   |   |   |   |   |   |--- Age <= 0.24
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |   |--- Age >  0.24
-|   |   |   |   |   |   |   |--- class: 1.0
-|   |   |   |   |   |--- JointFiler >  0.50
-|   |   |   |   |   |   |--- StockDividends <= 0.48
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |   |--- StockDividends >  0.48
-|   |   |   |   |   |   |   |--- class: 1.0
-|   |   |   |   |--- Age >  0.67
-|   |   |   |   |   |--- IsWidowed <= 0.50
-|   |   |   |   |   |   |--- StockDividends <= 0.01
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |   |--- StockDividends >  0.01
-|   |   |   |   |   |   |   |--- class: 1.0
-|   |   |   |   |   |--- IsWidowed >  0.50
+|   |   |   |--- StockDividends <= 0.02
+|   |   |   |   |--- WeeksWorked <= 0.60
+|   |   |   |   |   |--- CapitalGains <= 0.31
+|   |   |   |   |   |   |--- CapitalGains <= 0.15
+|   |   |   |   |   |   |   |--- CapitalGains <= 0.15
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- CapitalGains >  0.15
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |--- CapitalGains >  0.15
+|   |   |   |   |   |   |   |--- College <= 0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- College >  0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |--- CapitalGains >  0.31
+|   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |--- WeeksWorked >  0.60
+|   |   |   |   |   |--- Wage <= 0.15
 |   |   |   |   |   |   |--- Age <= 0.96
-|   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- OccupationCode <= 0.18
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- OccupationCode >  0.18
+|   |   |   |   |   |   |   |   |--- class: 1.0
 |   |   |   |   |   |   |--- Age >  0.96
+|   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |--- Wage >  0.15
+|   |   |   |   |   |   |--- IndustryCode <= 0.27
+|   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |--- IndustryCode >  0.27
 |   |   |   |   |   |   |   |--- class: 1.0
-|   |   |   |--- WeeksWorked >  0.60
-|   |   |   |   |--- StockDividends <= 0.02
-|   |   |   |   |   |--- Wage <= 0.07
-|   |   |   |   |   |   |--- CapitalGains <= 0.11
-|   |   |   |   |   |   |   |--- class: 1.0
-|   |   |   |   |   |   |--- CapitalGains >  0.11
-|   |   |   |   |   |   |   |--- class: 1.0
-|   |   |   |   |   |--- Wage >  0.07
-|   |   |   |   |   |   |--- Bachelors <= 0.50
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |   |--- Bachelors >  0.50
-|   |   |   |   |   |   |   |--- class: 1.0
-|   |   |   |   |--- StockDividends >  0.02
-|   |   |   |   |   |--- class: 1.0
-|--- OccupationCode >  0.16
-|   |--- CapitalGains <= 0.07
-|   |   |--- StockDividends <= 0.00
-|   |   |   |--- OccupationCode <= 0.35
-|   |   |   |   |--- Age <= 0.33
-|   |   |   |   |   |--- CapitalLosses <= 0.39
-|   |   |   |   |   |   |--- IndustryCode <= 0.20
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |   |--- IndustryCode >  0.20
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |--- CapitalLosses >  0.39
-|   |   |   |   |   |   |--- CapitalLosses <= 0.48
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |   |--- CapitalLosses >  0.48
-|   |   |   |   |   |   |   |--- class: 1.0
-|   |   |   |   |--- Age >  0.33
-|   |   |   |   |   |--- IndustryCode <= 0.19
-|   |   |   |   |   |   |--- Masters <= 0.50
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |   |--- Masters >  0.50
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |--- IndustryCode >  0.19
-|   |   |   |   |   |   |--- CapitalLosses <= 0.41
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |   |--- CapitalLosses >  0.41
-|   |   |   |   |   |   |   |--- class: 1.0
-|   |   |   |--- OccupationCode >  0.35
-|   |   |   |   |--- Age <= 0.34
-|   |   |   |   |   |--- Age <= 0.31
-|   |   |   |   |   |   |--- CapitalLosses <= 0.48
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |   |--- CapitalLosses >  0.48
-|   |   |   |   |   |   |   |--- class: 1.0
-|   |   |   |   |   |--- Age >  0.31
-|   |   |   |   |   |   |--- OccupationCode <= 0.58
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |   |--- OccupationCode >  0.58
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |--- Age >  0.34
-|   |   |   |   |   |--- OccupationCode <= 0.51
-|   |   |   |   |   |   |--- CapitalLosses <= 0.41
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |   |--- CapitalLosses >  0.41
-|   |   |   |   |   |   |   |--- class: 1.0
-|   |   |   |   |   |--- OccupationCode >  0.51
-|   |   |   |   |   |   |--- WeeksWorked <= 0.84
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |   |--- WeeksWorked >  0.84
-|   |   |   |   |   |   |   |--- class: 1.0
-|   |   |--- StockDividends >  0.00
-|   |   |   |--- OccupationCode <= 0.41
+|   |   |   |--- StockDividends >  0.02
+|   |   |   |   |--- class: 1.0
+|--- OccupationCode >  0.19
+|   |--- Age <= 0.34
+|   |   |--- Age <= 0.31
+|   |   |   |--- CapitalGains <= 0.07
 |   |   |   |   |--- CapitalLosses <= 0.41
 |   |   |   |   |   |--- StockDividends <= 0.00
-|   |   |   |   |   |   |--- Age <= 0.32
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |   |--- Age >  0.32
-|   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |--- Age <= 0.26
+|   |   |   |   |   |   |   |--- IndustryCode <= 0.37
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- IndustryCode >  0.37
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |--- Age >  0.26
+|   |   |   |   |   |   |   |--- ClassSelfEmployed <= 0.50
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- ClassSelfEmployed >  0.50
+|   |   |   |   |   |   |   |   |--- class: 0.0
 |   |   |   |   |   |--- StockDividends >  0.00
-|   |   |   |   |   |   |--- WeeksWorked <= 0.79
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |   |--- WeeksWorked >  0.79
-|   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |--- WeeksWorked <= 0.83
+|   |   |   |   |   |   |   |--- StockDividends <= 0.11
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- StockDividends >  0.11
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |--- WeeksWorked >  0.83
+|   |   |   |   |   |   |   |--- OccupationCode <= 0.36
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- OccupationCode >  0.36
+|   |   |   |   |   |   |   |   |--- class: 1.0
 |   |   |   |   |--- CapitalLosses >  0.41
-|   |   |   |   |   |--- CapitalLosses <= 0.51
-|   |   |   |   |   |   |--- OccupationCode <= 0.24
-|   |   |   |   |   |   |   |--- class: 1.0
-|   |   |   |   |   |   |--- OccupationCode >  0.24
-|   |   |   |   |   |   |   |--- class: 1.0
-|   |   |   |   |   |--- CapitalLosses >  0.51
-|   |   |   |   |   |   |--- IndustryCode <= 0.12
-|   |   |   |   |   |   |   |--- class: 1.0
-|   |   |   |   |   |   |--- IndustryCode >  0.12
-|   |   |   |   |   |   |   |--- class: 1.0
-|   |   |   |--- OccupationCode >  0.41
-|   |   |   |   |--- CapitalLosses <= 0.43
-|   |   |   |   |   |--- WeeksWorked <= 0.86
-|   |   |   |   |   |   |--- Age <= 0.36
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |   |--- Age >  0.36
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |--- WeeksWorked >  0.86
-|   |   |   |   |   |   |--- Age <= 0.37
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |   |--- Age >  0.37
-|   |   |   |   |   |   |   |--- class: 1.0
-|   |   |   |   |--- CapitalLosses >  0.43
-|   |   |   |   |   |--- CapitalLosses <= 0.49
-|   |   |   |   |   |   |--- IsDivorced <= 0.50
-|   |   |   |   |   |   |   |--- class: 1.0
-|   |   |   |   |   |   |--- IsDivorced >  0.50
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |--- CapitalLosses >  0.49
-|   |   |   |   |   |   |--- class: 1.0
-|   |--- CapitalGains >  0.07
-|   |   |--- CapitalGains <= 0.10
-|   |   |   |--- SingleFiler <= 0.50
-|   |   |   |   |--- OccupationCode <= 0.44
-|   |   |   |   |   |--- Age <= 0.33
-|   |   |   |   |   |   |--- IndustryCode <= 0.38
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |   |--- IndustryCode >  0.38
-|   |   |   |   |   |   |   |--- class: 1.0
-|   |   |   |   |   |--- Age >  0.33
-|   |   |   |   |   |   |--- CapitalGains <= 0.07
-|   |   |   |   |   |   |   |--- class: 1.0
-|   |   |   |   |   |   |--- CapitalGains >  0.07
-|   |   |   |   |   |   |   |--- class: 1.0
-|   |   |   |   |--- OccupationCode >  0.44
-|   |   |   |   |   |--- OccupationCode <= 0.71
-|   |   |   |   |   |   |--- Wage <= 0.06
-|   |   |   |   |   |   |   |--- class: 1.0
-|   |   |   |   |   |   |--- Wage >  0.06
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |--- OccupationCode >  0.71
-|   |   |   |   |   |   |--- Age <= 0.36
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |   |--- Age >  0.36
-|   |   |   |   |   |   |   |--- class: 1.0
-|   |   |   |--- SingleFiler >  0.50
-|   |   |   |   |--- OccupationCode <= 0.18
-|   |   |   |   |   |--- Age <= 0.44
-|   |   |   |   |   |   |--- Masters <= 0.50
-|   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |   |--- Masters >  0.50
-|   |   |   |   |   |   |   |--- class: 1.0
-|   |   |   |   |   |--- Age >  0.44
+|   |   |   |   |   |--- Age <= 0.25
 |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |--- OccupationCode >  0.18
+|   |   |   |   |   |--- Age >  0.25
+|   |   |   |   |   |   |--- ClassPrivate <= 0.50
+|   |   |   |   |   |   |   |--- CapitalLosses <= 0.46
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- CapitalLosses >  0.46
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |--- ClassPrivate >  0.50
+|   |   |   |   |   |   |   |--- WeeksWorked <= 0.44
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- WeeksWorked >  0.44
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |--- CapitalGains >  0.07
+|   |   |   |   |--- WeeksWorked <= 0.83
 |   |   |   |   |   |--- class: 0.0
-|   |   |--- CapitalGains >  0.10
-|   |   |   |--- OccupationCode <= 0.28
-|   |   |   |   |--- Wage <= 0.05
-|   |   |   |   |   |--- RaceWhite <= 0.50
-|   |   |   |   |   |   |--- IndustryCode <= 0.35
-|   |   |   |   |   |   |   |--- class: 1.0
-|   |   |   |   |   |   |--- IndustryCode >  0.35
-|   |   |   |   |   |   |   |--- class: 1.0
-|   |   |   |   |   |--- RaceWhite >  0.50
-|   |   |   |   |   |   |--- StockDividends <= 0.03
-|   |   |   |   |   |   |   |--- class: 1.0
-|   |   |   |   |   |   |--- StockDividends >  0.03
-|   |   |   |   |   |   |   |--- class: 1.0
-|   |   |   |   |--- Wage >  0.05
-|   |   |   |   |   |--- Age <= 0.38
+|   |   |   |   |--- WeeksWorked >  0.83
+|   |   |   |   |   |--- OccupationCode <= 0.22
 |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |--- Age >  0.38
-|   |   |   |   |   |   |--- Age <= 0.69
-|   |   |   |   |   |   |   |--- class: 1.0
-|   |   |   |   |   |   |--- Age >  0.69
+|   |   |   |   |   |--- OccupationCode >  0.22
+|   |   |   |   |   |   |--- CapitalGains <= 0.10
+|   |   |   |   |   |   |   |--- IsMarried <= 0.50
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- IsMarried >  0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- CapitalGains >  0.10
+|   |   |   |   |   |   |   |--- Wage <= 0.10
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- Wage >  0.10
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |--- Age >  0.31
+|   |   |   |--- StockDividends <= 0.00
+|   |   |   |   |--- CapitalGains <= 0.08
+|   |   |   |   |   |--- OccupationCode <= 0.51
+|   |   |   |   |   |   |--- IndustryCode <= 0.18
+|   |   |   |   |   |   |   |--- Wage <= 0.28
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- Wage >  0.28
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- IndustryCode >  0.18
+|   |   |   |   |   |   |   |--- CapitalLosses <= 0.46
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- CapitalLosses >  0.46
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |--- OccupationCode >  0.51
+|   |   |   |   |   |   |--- WeeksWorked <= 0.67
 |   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |--- OccupationCode >  0.28
-|   |   |   |   |--- CapitalGains <= 0.15
-|   |   |   |   |   |--- StockDividends <= 0.00
+|   |   |   |   |   |   |--- WeeksWorked >  0.67
+|   |   |   |   |   |   |   |--- IndustryCode <= 0.21
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- IndustryCode >  0.21
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |--- CapitalGains >  0.08
+|   |   |   |   |   |--- WeeksWorked <= 0.90
 |   |   |   |   |   |   |--- CapitalGains <= 0.11
-|   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- class: 0.0
 |   |   |   |   |   |   |--- CapitalGains >  0.11
 |   |   |   |   |   |   |   |--- class: 1.0
-|   |   |   |   |   |--- StockDividends >  0.00
-|   |   |   |   |   |   |--- WeeksWorked <= 0.72
+|   |   |   |   |   |--- WeeksWorked >  0.90
+|   |   |   |   |   |   |--- Bachelors <= 0.50
+|   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- Bachelors >  0.50
+|   |   |   |   |   |   |   |--- Age <= 0.33
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- Age >  0.33
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |--- StockDividends >  0.00
+|   |   |   |   |--- IndustryCode <= 0.22
+|   |   |   |   |   |--- CapitalGains <= 0.03
+|   |   |   |   |   |   |--- OccupationCode <= 0.58
+|   |   |   |   |   |   |   |--- IndustryCode <= 0.07
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- IndustryCode >  0.07
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |--- OccupationCode >  0.58
+|   |   |   |   |   |   |   |--- Doctorate <= 0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- Doctorate >  0.50
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |--- CapitalGains >  0.03
+|   |   |   |   |   |   |--- IndustryCode <= 0.20
+|   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- IndustryCode >  0.20
+|   |   |   |   |   |   |   |--- IsMarried <= 0.50
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- IsMarried >  0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |--- IndustryCode >  0.22
+|   |   |   |   |   |--- OccupationCode <= 0.41
+|   |   |   |   |   |   |--- StockDividends <= 0.00
+|   |   |   |   |   |   |   |--- IndustryCode <= 0.23
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- IndustryCode >  0.23
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- StockDividends >  0.00
+|   |   |   |   |   |   |   |--- StockDividends <= 0.01
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- StockDividends >  0.01
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |--- OccupationCode >  0.41
+|   |   |   |   |   |   |--- WeeksWorked <= 0.91
+|   |   |   |   |   |   |   |--- Masters <= 0.50
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- Masters >  0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- WeeksWorked >  0.91
+|   |   |   |   |   |   |   |--- Wage <= 0.07
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- Wage >  0.07
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |--- Age >  0.34
+|   |   |--- StockDividends <= 0.00
+|   |   |   |--- OccupationCode <= 0.39
+|   |   |   |   |--- CapitalGains <= 0.07
+|   |   |   |   |   |--- CapitalLosses <= 0.41
+|   |   |   |   |   |   |--- WeeksWorked <= 0.86
+|   |   |   |   |   |   |   |--- Bachelors <= 0.50
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- Bachelors >  0.50
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |--- WeeksWorked >  0.86
+|   |   |   |   |   |   |   |--- IndustryCode <= 0.18
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- IndustryCode >  0.18
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |--- CapitalLosses >  0.41
+|   |   |   |   |   |   |--- Age <= 0.37
+|   |   |   |   |   |   |   |--- IndustryCode <= 0.32
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- IndustryCode >  0.32
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |--- Age >  0.37
+|   |   |   |   |   |   |   |--- CapitalLosses <= 0.43
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- CapitalLosses >  0.43
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |--- CapitalGains >  0.07
+|   |   |   |   |   |--- CapitalGains <= 0.09
+|   |   |   |   |   |   |--- CapitalGains <= 0.08
+|   |   |   |   |   |   |   |--- OccupationCode <= 0.22
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- OccupationCode >  0.22
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- CapitalGains >  0.08
 |   |   |   |   |   |   |   |--- class: 0.0
-|   |   |   |   |   |   |--- WeeksWorked >  0.72
-|   |   |   |   |   |   |   |--- class: 1.0
-|   |   |   |   |--- CapitalGains >  0.15
-|   |   |   |   |   |--- OccupationCode <= 0.48
-|   |   |   |   |   |   |--- CapitalGains <= 0.31
-|   |   |   |   |   |   |   |--- class: 1.0
-|   |   |   |   |   |   |--- CapitalGains >  0.31
-|   |   |   |   |   |   |   |--- class: 1.0
-|   |   |   |   |   |--- OccupationCode >  0.48
+|   |   |   |   |   |--- CapitalGains >  0.09
+|   |   |   |   |   |   |--- Wage <= 0.06
+|   |   |   |   |   |   |   |--- IndustryCode <= 0.35
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- IndustryCode >  0.35
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- Wage >  0.06
+|   |   |   |   |   |   |   |--- ProfDegree <= 0.50
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- ProfDegree >  0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |--- OccupationCode >  0.39
+|   |   |   |   |--- WeeksWorked <= 0.86
+|   |   |   |   |   |--- CapitalGains <= 0.09
+|   |   |   |   |   |   |--- WeeksWorked <= 0.26
+|   |   |   |   |   |   |   |--- Age <= 0.69
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- Age >  0.69
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |--- WeeksWorked >  0.26
+|   |   |   |   |   |   |   |--- Doctorate <= 0.50
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- Doctorate >  0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |--- CapitalGains >  0.09
 |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |--- WeeksWorked >  0.86
+|   |   |   |   |   |--- CapitalGains <= 0.07
+|   |   |   |   |   |   |--- OccupationCode <= 0.51
+|   |   |   |   |   |   |   |--- IndustryCode <= 0.12
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- IndustryCode >  0.12
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- OccupationCode >  0.51
+|   |   |   |   |   |   |   |--- College <= 0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- College >  0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |--- CapitalGains >  0.07
+|   |   |   |   |   |   |--- CapitalGains <= 0.09
+|   |   |   |   |   |   |   |--- SingleFiler <= 0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- SingleFiler >  0.50
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |--- CapitalGains >  0.09
+|   |   |   |   |   |   |   |--- IndustryCode <= 0.06
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- IndustryCode >  0.06
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |--- StockDividends >  0.00
+|   |   |   |--- WeeksWorked <= 0.82
+|   |   |   |   |--- StockDividends <= 0.01
+|   |   |   |   |   |--- WeeksWorked <= 0.59
+|   |   |   |   |   |   |--- OccupationCode <= 0.51
+|   |   |   |   |   |   |   |--- CapitalLosses <= 0.47
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- CapitalLosses >  0.47
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- OccupationCode >  0.51
+|   |   |   |   |   |   |   |--- WeeksWorked <= 0.36
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- WeeksWorked >  0.36
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |--- WeeksWorked >  0.59
+|   |   |   |   |   |   |--- Age <= 0.48
+|   |   |   |   |   |   |   |--- Doctorate <= 0.50
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- Doctorate >  0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- Age >  0.48
+|   |   |   |   |   |   |   |--- StockDividends <= 0.00
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- StockDividends >  0.00
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |--- StockDividends >  0.01
+|   |   |   |   |   |--- WeeksWorked <= 0.21
+|   |   |   |   |   |   |--- StockDividends <= 0.06
+|   |   |   |   |   |   |   |--- OccupationCode <= 0.28
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- OccupationCode >  0.28
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |--- StockDividends >  0.06
+|   |   |   |   |   |   |   |--- Bachelors <= 0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- Bachelors >  0.50
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |--- WeeksWorked >  0.21
+|   |   |   |   |   |   |--- IndustryCode <= 0.22
+|   |   |   |   |   |   |   |--- IndustryCode <= 0.19
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- IndustryCode >  0.19
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |--- IndustryCode >  0.22
+|   |   |   |   |   |   |   |--- Bachelors <= 0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- Bachelors >  0.50
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |--- WeeksWorked >  0.82
+|   |   |   |   |--- OccupationCode <= 0.30
+|   |   |   |   |   |--- CapitalGains <= 0.07
+|   |   |   |   |   |   |--- StockDividends <= 0.00
+|   |   |   |   |   |   |   |--- IndustryCode <= 0.24
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- IndustryCode >  0.24
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- StockDividends >  0.00
+|   |   |   |   |   |   |   |--- IndustryCode <= 0.06
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- IndustryCode >  0.06
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |--- CapitalGains >  0.07
+|   |   |   |   |   |   |--- RaceOther <= 0.50
+|   |   |   |   |   |   |   |--- OccupationCode <= 0.28
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- OccupationCode >  0.28
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- RaceOther >  0.50
+|   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |--- OccupationCode >  0.30
+|   |   |   |   |   |--- CapitalGains <= 0.10
+|   |   |   |   |   |   |--- College <= 0.50
+|   |   |   |   |   |   |   |--- CapitalLosses <= 0.39
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- CapitalLosses >  0.39
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- College >  0.50
+|   |   |   |   |   |   |   |--- Age <= 0.39
+|   |   |   |   |   |   |   |   |--- class: 0.0
+|   |   |   |   |   |   |   |--- Age >  0.39
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |--- CapitalGains >  0.10
+|   |   |   |   |   |   |--- IndustryCode <= 0.47
+|   |   |   |   |   |   |   |--- Age <= 0.36
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- Age >  0.36
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |--- IndustryCode >  0.47
+|   |   |   |   |   |   |   |--- OccupationCode <= 0.42
+|   |   |   |   |   |   |   |   |--- class: 1.0
+|   |   |   |   |   |   |   |--- OccupationCode >  0.42
+|   |   |   |   |   |   |   |   |--- class: 0.0

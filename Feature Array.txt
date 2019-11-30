@@ -1,7 +1,0 @@
-feature_names = ["Age", "Class: Not Employed", "Class : Private", "Class: Self-Employed", "Class: Local Government", "Class: State Government", "Class: Federal Government", "Industry Code",\
-                    "Occupation Code", "Education: Less than High School:", "Education: High School Graduate", "Education: College", "Education: Bachelors", "Education: Masters", "Education: Prof Degree", "Education: Doctorate",\
-                    "Wage", "EnrolledEducation: Not in School", "EnrolledEducation: High School", "EnrolledEducation: College or University", "MarriageStatus: Not Married", "MarriageStatus: Married", "MarriedStatus: Divorced",\
-                     "Married Status: Widowed", "Race: Asian or Pacific Islander", "Race: White", "Race: Other",\
-                    "Race: Amer Indian Aleut or Eskimo", "Race: Black", "Sex: Male", "Sex: Female", "EmploymentStatus: Not Employed", "EmploymentStatus: Part Time", "EmploymentStatus: Full Time",\
-                    "Capital Gains", "Capital Losses", "Stock Dividends", "TaxFilerStatus: Head of Household", "TaxFilerStatus: Joint", "TaxFilerStatus: Single", "TaxFilerStatus: Nonfiler",\
-                    "CountryOfBirthOfParents: Has American Parent", "CountryOfBirthOfPerson: American", "WeeksWorked"]

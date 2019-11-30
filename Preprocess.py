@@ -162,7 +162,7 @@ def remove_duplicates(data_array, data_type_string):
 # Remove duplicates from the training data set
 sorted_raw_training_data = remove_duplicates(sorted_raw_training_data, 'training')
 print("The number of training data instances after removing duplicate entries is " + str(len(sorted_raw_training_data)))
-print("The number of testing data instances after removing duplicate entries is " + str(len(sorted_raw_testing_data)))
+#print("The number of testing data instances after removing duplicate entries is " + str(len(sorted_raw_testing_data)))
 
 
 # Convert the age value back to a string for printing/writing for both data sets

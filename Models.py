@@ -1,7 +1,8 @@
-import tensorflow as tf
-
-tf.compat.v1.logging.set_verbosity(tf.logging.ERROR)
+import warnings
+warnings.filterwarnings("ignore")
 from sklearn import tree
+import tensorflow as tf
+tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import recall_score
 from sklearn.metrics import precision_score
@@ -11,30 +12,33 @@ from sklearn.metrics import roc_curve
 from sklearn.metrics import roc_auc_score
 from sklearn.model_selection import cross_validate
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.tree.export import export_text
+from sklearn.ensemble import AdaBoostClassifier
 import numpy as np
 from keras.models import Sequential
 from keras.layers import Dense
 from imblearn.over_sampling import RandomOverSampler
-from sklearn.tree.export import export_text
-from sklearn.ensemble import AdaBoostClassifier
+from imblearn.under_sampling import RandomUnderSampler
 import os
 from skrules import SkopeRules
 import scipy
 import matplotlib.pyplot as plt
+import time
+from sklearn.utils import shuffle
+start = time.time()
 
 train_dath_path = 'census-income.data/train_data'
 test_data_path = 'census-income.test/test_data'
 feature_names = ["Age", "ClassNotEmployed", "ClassPrivate", "ClassSelfEmployed", "ClassLocalGovernment",
-                 "ClassStateGovernment", "ClassFederalGovernment", "IndustryCode", \
-                 "OccupationCode", "LessThanHighSchool:", "College", "Bachelors", "Masters", "ProfDegree", "Doctorate", \
+                 "ClassStateGovernment", "ClassFederalGovernment", "IndustryCode",
+                 "OccupationCode", "LessThanHighSchool:", "College", "Bachelors", "Masters", "ProfDegree", "Doctorate",
                  "Wage", "EnrolledEducation - Not in School", "EnrolledHighSchool", "EnrolledCollegeOrUniversity",
-                 "IsNotMarried", "IsMarried", "IsDivorced", \
-                 "IsWidowed", "RaceAsian", "RaceWhite", "RaceOther", \
+                 "IsNotMarried", "IsMarried", "IsDivorced",
+                 "IsWidowed", "RaceAsian", "RaceWhite", "RaceOther",
                  "RaceAmericanIndian", "RaceBlack", "SexMale", "EmploymentStatusNotEmployed",
-                 "EmploymentStatusPartTime", "EmploymentStatusFullTime", \
+                 "EmploymentStatusPartTime", "EmploymentStatusFullTime",
                  "CapitalGains", "CapitalLosses", "StockDividends", "HeadOfHousehold", "JointFiler", "SingleFiler",
-                 "NonFiler", \
-                 "HasAmericanParent", "IsAmericanBorn", "WeeksWorked"]
+                 "NonFiler", "HasAmericanParent", "IsAmericanBorn", "WeeksWorked"]
 
 
 # Read the data of a file into an array
@@ -47,7 +51,7 @@ def read_file_into_array(file_path):
             temp = []
             string_vals = line.split(', ')
             for i in range(0, len(string_vals)):
-                temp.append(float(string_vals[i]))
+                temp.append(float(string_vals[i]))    # Convert the string values to floats for processing
             file_array.append(temp)
     file.close()
     return file_array  # remove the last entry as it is just white-space
@@ -124,22 +128,28 @@ print_class_distribution(Y_train, "training")
 print_class_distribution(Y_test, "testing")
 
 # Oversample the Minority Class
-ros = RandomOverSampler(random_state=0, ratio={1: 15000, 0: 140529})
+ros = RandomOverSampler(random_state=0, ratio={1: 20000, 0: 140529})
 X_train, Y_train = ros.fit_resample(X_train, Y_train)
+# Undersample the majority Class
+ros = RandomUnderSampler(random_state=0, ratio={1: 20000, 0: 50000})
+X_train, Y_train = ros.fit_resample(X_train, Y_train)
+X_train, Y_train = shuffle(X_train, Y_train)
 
 # Get validation data which is roughly 10% the size of the original training data
-X_val = X_train[0:int(0.1 * len(X_train))]
-Y_val = Y_train[0:int(0.1 * len(X_train))]
-X_test_val = X_train[int(0.1 * len(X_train)+1):]
-Y_test_val = Y_train[int(0.1 * len(X_train)+1):]
+X_val = X_train[0:int(0.8 * len(X_train))]
+Y_val = Y_train[0:int(0.8 * len(X_train))]
+X_test_val = X_train[int(0.8 * len(X_train)):]
+Y_test_val = Y_train[int(0.8 * len(X_train)):]
 
 # Print the class distributions of the training and testing set after oversampling
+print("After resampling")
 print_class_distribution(Y_train, "training")
+print_class_distribution(Y_test_val, "validation")
 
 
 # Helper function that prints statistics for predictions from the models
 # Prints accuracy, recall, f1 score, precision, and the confusion matrix
-def print_statistics(model_name, y_true, y_pred):
+def print_statistics(model_name, y_pred, y_true):
     accuracy = accuracy_score(y_true, y_pred)
     recall = recall_score(y_true, y_pred)
     f1 = f1_score(y_true, y_pred)
@@ -180,68 +190,67 @@ def write_rules_to_file(data_array, file_path):
 
 # **************** Decision Tree Section ******************************
 # Create three decision trees for validation and ultimately select 1
-clf_val_gini = tree.DecisionTreeClassifier(max_depth=8, criterion="gini", min_samples_split=5)
+# First decision tree model
+clf_val_gini = tree.DecisionTreeClassifier(max_depth=8, criterion="gini", min_samples_split=2)
 clf_val_gini.fit(X_val, Y_val)
-clf_val_gini_predict = clf_val_gini.predict(X_train)
-print_statistics("Decision Tree - Gini criterion", clf_val_gini_predict, Y_train)
-
-# Create three decision trees for validation
-clf_val_entropy = tree.DecisionTreeClassifier(max_depth=7, criterion="entropy", min_samples_split=5)
+clf_val_gini_predict = clf_val_gini.predict(X_test_val)
+print_statistics("Decision Tree - Gini criterion", clf_val_gini_predict, Y_test_val)
+# Second decision tree model
+clf_val_entropy = tree.DecisionTreeClassifier(max_depth=20, criterion="entropy", min_samples_split=2)
 clf_val_entropy.fit(X_val, Y_val)
 clf_val_entropy_predict = clf_val_entropy.predict(X_test_val)
 print_statistics("Decision Tree - Entropy criterion", clf_val_entropy_predict, Y_test_val)
-
-# Create three decision trees for validation
-clf_val_gini2 = tree.DecisionTreeClassifier(max_depth=15, criterion="gini", min_samples_split=5, splitter="random")
+# Third decision tree model
+clf_val_gini2 = tree.DecisionTreeClassifier(criterion="gini")
 clf_val_gini2.fit(X_val, Y_val)
 clf_val_gini2_predict = clf_val_gini2.predict(X_test_val)
 print_statistics("Decision Tree - Gini criterion variant", clf_val_gini2_predict, Y_test_val)
 
-print("In light of these results, the entropy decision tree will be chosen")
+
+print("In light of these results, the entropy decision tree will be chosen with max depth = 8, and minimum samples to split = 2")
 
 # Next we fit the chosen decision tree classifier with the training data
-dt_clf = tree.DecisionTreeClassifier(max_depth=7, criterion="entropy", min_samples_split=2)
+dt_clf = tree.DecisionTreeClassifier(max_depth=8, criterion="gini", min_samples_split=2)
 
 # Compute the cross validated accuracy scores
-dt_clf_cross_validation_scores = print_cross_validation(dt_clf, "Decision Tree - Gini criterion", X_train, Y_train)
+dt_clf_cross_validation_scores = print_cross_validation(dt_clf, "Decision Tree - Entropy criterion", X_train, Y_train)
 
 # Train the decision tree and predict the results on the test set, and print the results
 dt_clf.fit(X_train, Y_train)
 dt_clf_pred = dt_clf.predict(X_test)
-print_statistics("Decision Tree", dt_clf_pred, Y_test)
+print_statistics("Decision Tree - Entropy criterion", dt_clf_pred, Y_test)
 
 # Next we print the tree's rules and export them to a text file
 tree_rules = export_text(dt_clf, feature_names=feature_names)
 write_rules_to_file(tree_rules, "Tree Rules")
 
 # **************** Nearest Neighbours Section *********************
-# Next we will compare 3 nearest neighbour models on the validation set
-
+# Next we will compare 5 nearest neighbour models on the validation set
+# First knn model
 knn_val_1 = KNeighborsClassifier(n_neighbors=5, weights="distance")
 knn_val_1.fit(X_val, Y_val)
 knn_val_1_predict = knn_val_1.predict(X_test_val)
 print_statistics("Nearest Neighbours - Model 1 ", knn_val_1_predict, Y_test_val)
-
+# Second knn model
 knn_val_2 = KNeighborsClassifier(n_neighbors=5, metric="manhattan")
 knn_val_2.fit(X_val, Y_val)
 knn_val_2_predict = knn_val_2.predict(X_test_val)
 print_statistics("Nearest Neighbours - Model 2 ", knn_val_2_predict,  Y_test_val)
-
+# Third knn model
 knn_val_3 = KNeighborsClassifier(n_neighbors=5, weights="distance", metric="manhattan")
 knn_val_3.fit(X_val, Y_val)
 knn_val_3_predict = knn_val_3.predict(X_test_val)
 print_statistics("Nearest Neighbours - Model 3 ", knn_val_3_predict, Y_test_val)
-
+# Fourth knn model
 knn_val_4 = KNeighborsClassifier(n_neighbors=3, weights="distance")
 knn_val_4.fit(X_val, Y_val)
 knn_val_4_predict = knn_val_4.predict(X_test_val)
 print_statistics("Nearest Neighbours - Model 4 ", knn_val_4_predict, Y_test_val)
-
+# Fifth knn model
 knn_val_5 = KNeighborsClassifier(n_neighbors=1, metric="manhattan")
 knn_val_5.fit(X_val, Y_val)
 knn_val_5_predict = knn_val_5.predict(X_test_val)
 print_statistics("Nearest Neighbours - Model 5 ", knn_val_5_predict, Y_test_val)
-
 print("\nAs per the results, the first nearest neighbours model with parameters 5 neighbours at a weighted distance, will be chosen")
 
 # Fit the chosen nearest neighbours model to the training data
@@ -327,6 +336,7 @@ print_statistics("Semi-Supervised Neural Network", neural_network_pred, Y_test)
 
 # ************* Rule Model:  ************************
 # Here we compare 3 nearest neighbour models on the validation set
+# First skope rules model
 rule_clf1 = SkopeRules(
                        n_estimators=50,
                        precision_min=0.2,
@@ -335,7 +345,7 @@ rule_clf1 = SkopeRules(
 rule_clf1.fit(X_val, Y_val)
 rule_clf1_ypred = rule_clf1.predict(X_test_val)
 print_statistics("Rule Classifier - Skope Rules - Model 1", rule_clf1_ypred, Y_test_val)
-
+# Second skope rules model
 rule_clf2 = SkopeRules(n_estimators=50,
                        precision_min=0.2,
                        recall_min=0.2,
@@ -343,7 +353,7 @@ rule_clf2 = SkopeRules(n_estimators=50,
 rule_clf2.fit(X_val, Y_val)
 rule_clf2_ypred = rule_clf2.predict(X_test_val)
 print_statistics("Rule Classifier - Skope Rules - Model 2", rule_clf2_ypred, Y_test_val)
-
+# Third skope rules model
 rule_clf3 = SkopeRules(n_estimators=25,
                        precision_min=0.2,
                        recall_min=0.2,
@@ -352,8 +362,8 @@ rule_clf3.fit(X_val, Y_val)
 rule_clf3_ypred = rule_clf3.predict(X_test_val)
 print_statistics("Rule Classifier - Skope Rules - Model 3", rule_clf3_ypred, Y_test_val)
 
-print("\n As per the results, model 3 will be chosen for training")
-rule_clf = SkopeRules(n_estimators=25,
+print("\nAs per the results, Skope Rules model 1 will be chosen for training")
+rule_clf = SkopeRules(n_estimators=50,
                       precision_min=0.2,
                       recall_min=0.2,
                       feature_names=feature_names)
@@ -361,6 +371,7 @@ rule_clf = SkopeRules(n_estimators=25,
 # Run 10-fold cross validation on the
 rule_clf_cross_validation_scores = print_cross_validation(rule_clf, "Skope Rules", X_train, Y_train)
 
+# Train the skope rules model on the training data and print the results on the test data
 rule_clf.fit(X_train, Y_train)
 rule_clf_pred = rule_clf.predict(X_test)
 print_statistics("Skope Rules", rule_clf_pred, Y_test)
@@ -370,28 +381,29 @@ for rule in rules:
 
 # ************* Ensemble Model: AdaBoostClassifier **********************
 # Here we compare three AdaBoostClassifiers on the validation set
-
-
-ada_boost_clf1 = AdaBoostClassifier(n_estimators=100, random_state=0)
+# First ada boost model
+ada_boost_clf1 = AdaBoostClassifier(n_estimators=50, random_state=0)
 ada_boost_clf1.fit(X_val, Y_val)
 ada_boost_clf1_ypred = ada_boost_clf1.predict(X_test_val)
 print_statistics("Ada Boost Classifier - Model 1", ada_boost_clf1_ypred, Y_test_val)
-
-ada_boost_clf2 = AdaBoostClassifier(n_estimators=100, random_state=0, learning_rate=0.5)
+# Second ada boost model
+ada_boost_clf2 = AdaBoostClassifier(n_estimators=50, random_state=0, learning_rate=0.5)
 ada_boost_clf2.fit(X_val, Y_val)
 ada_boost_clf2_ypred = ada_boost_clf2.predict(X_test_val)
 print_statistics("Ada Boost Classifier - Model 2", ada_boost_clf2_ypred, Y_test_val)
-
+# Third ada boost model
 ada_boost_clf3 = AdaBoostClassifier(n_estimators=100, random_state=0, learning_rate=0.2)
 ada_boost_clf3.fit(X_val, Y_val)
 ada_boost_clf3_ypred = ada_boost_clf3.predict(X_test_val)
 print_statistics("Ada Boost Classifier - Model 3", ada_boost_clf3_ypred, Y_test_val)
 
-print("As per the results, Model 1 will be chosen for training and testing")
-ada_boost_clf = AdaBoostClassifier(n_estimators=100, random_state=0)
+print("\nAs per the results, Model 1 will be chosen for training and testing")
+ada_boost_clf = AdaBoostClassifier(n_estimators=100, random_state=0, learning_rate=0.2)
 
 # Compute 10-fold cross validation on the Ada Boost Classifier
 ada_boost_cross_validation_scores = print_cross_validation(ada_boost_clf, "Ada Boost Classifier", X_train, Y_train)
+
+# Train the ada boost classifier model on the training data and print the results from testing on the test data
 ada_boost_clf.fit(X_train, Y_train)
 ada_boost_clf_pred = ada_boost_clf.predict(X_test)
 print_statistics("Ada Boost Classifier", ada_boost_clf_pred, Y_test)
@@ -415,7 +427,7 @@ def wilcoxons_signed_rank_test(data1, data2, model1name, model2name):
         print("The recall of the models belongs is not significantly different")
 
 
-# Compute the pairwise signed Wilcoxon's test (not for the neural network)
+# Compute the pairwise signed Wilcoxon's test (not for the neural network or the overall model)
 
 wilcoxons_signed_rank_test(dt_clf_cross_validation_scores, knn_cross_validation_scores, "Decision Tree",
                            "Nearest Neighbours")
@@ -449,6 +461,7 @@ def compute_majority_vote(pred_array):
     return predictions
 
 
+# Print the results of majority voting on the test data using all models
 model_array = [dt_clf_pred, knn_pred, neural_network_pred, rule_clf_pred, ada_boost_clf_pred]
 overall_pred = compute_majority_vote(model_array)
 print_statistics("Overall Predictions", overall_pred, Y_test)
@@ -457,27 +470,28 @@ print_statistics("Overall Predictions", overall_pred, Y_test)
 plt.figure(0).clf()
 
 dt_clf_auc = roc_auc_score(dt_clf_pred, Y_test)
-dt_clf_fpr, dt_clf_tpr,_ = roc_curve(dt_clf_pred, Y_test, pos_label=1)
+dt_clf_fpr, dt_clf_tpr, _ = roc_curve(dt_clf_pred, Y_test, pos_label=1)
 plt.plot(dt_clf_fpr, dt_clf_tpr, label="dt_clf, auc = " + str(dt_clf_auc))
 
 knn_auc = roc_auc_score(knn_pred, Y_test)
 knn_fpr, knn_tpr, _ = roc_curve(knn_pred, Y_test)
-plt.plot(knn_fpr, knn_tpr, label="dt clf, auc = " + str(knn_auc))
+plt.plot(knn_fpr, knn_tpr, label="knn_clf, auc = " + str(knn_auc))
 
 neural_network_auc = roc_auc_score(neural_network_pred, Y_test)
-neural_network_fpr, neural_network_tpr, _ = roc_curve(neural_network_pred, Y_test)
+neural_network_fpr, neural_network_tpr, _ = roc_curve(neural_network_pred, Y_test, pos_label=1)
 plt.plot(neural_network_fpr, neural_network_tpr, label="neural net, auc = " + str(neural_network_auc))
 
 rule_clf_auc = roc_auc_score(rule_clf_pred, Y_test)
-rule_clf_fpr, rule_clf_tpr, _ = roc_curve(rule_clf_pred, Y_test)
+rule_clf_fpr, rule_clf_tpr, _ = roc_curve(rule_clf_pred, Y_test, pos_label=1)
 plt.plot(rule_clf_fpr, rule_clf_tpr, label="rule clf, auc = " + str(rule_clf_auc))
 
 ada_boost_auc = roc_auc_score(ada_boost_clf_pred, Y_test)
-ada_boost_fpr, ada_boost_tpr, _ = roc_curve(ada_boost_clf_pred, Y_test)
+ada_boost_fpr, ada_boost_tpr, _ = roc_curve(ada_boost_clf_pred, Y_test, pos_label=1)
 plt.plot(ada_boost_fpr, ada_boost_tpr, label="ada boost clf, auc = " + str(ada_boost_auc))
 
 overall_auc = roc_auc_score(overall_pred, Y_test)
-overall_fpr, overall_trp, _ = roc_curve(overall_pred, Y_test)
-plt.plot(overall_fpr, overall_fpr, label="overall clf, auc = "+str(overall_auc))
+overall_fpr, overall_tpr, _ = roc_curve(overall_pred, Y_test,  pos_label=1)
+plt.plot(overall_fpr, overall_tpr, label="overall clf, auc = "+str(overall_auc))
 plt.legend(loc=0)
+print('The total running time of this script is {0:0.1f} seconds'.format(time.time() - start))
 plt.show()
