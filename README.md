@@ -44,5 +44,7 @@ as well as a reduced feature list as per the output of Preproces2.py in the file
 The rules output by the decision tree are written to the file Tree Rules.txt, and the rules output by the Skope Rules
 classifier are available in the file Skope Rules.txt
 
+Sample output from the models program is available in the file Sample Output.txt.
 
 
+Thanks for stopping by!
