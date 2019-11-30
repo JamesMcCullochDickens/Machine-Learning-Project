@@ -10,7 +10,7 @@ classify whether a given instance makes more than 50K a year or not , a.k.a a bi
 
 My code is organized as follows:
 
-First Preprocess.py takes the initial census-income.data file and census-income.test file and 
+Preprocess.py takes the initial census-income.data file and census-income.test file and 
 - prints information about the data and its attributes
 - removes duplicates from the training data
 - deals with instance weight conflicts
@@ -19,14 +19,14 @@ First Preprocess.py takes the initial census-income.data file and census-income.
 'census-income.data/training_data_preprocess1', 
 'census-income.test/testing_data_preprocess1'
 
-Next Preprocess2.py 
+Preprocess2.py 
 - eliminates certain features
 - simplifies certain features by using binning
 - writes the result to the files:
 'census-income.data/training_data_preprocess2', 
 'census-income.test/testing_data_preprocess2'
 
-Next Preprocess3.py 
+Preprocess3.py 
 - One-hot-encoding applied to categorical attributes:
   class of worker, education, enrolled education, married, race, sex, employment status, and tax filer status
 - feature calibration of the occupation code and industry code
