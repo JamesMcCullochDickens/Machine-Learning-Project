@@ -21,7 +21,7 @@ from imblearn.over_sampling import RandomOverSampler
 from imblearn.under_sampling import RandomUnderSampler
 import os
 from skrules import SkopeRules
-import scipy
+from scipy import stats
 import matplotlib.pyplot as plt
 import time
 from sklearn.utils import shuffle
@@ -280,10 +280,12 @@ neural_network.compile(loss='binary_crossentropy', optimizer='adam', metrics=['a
 # only on high probability unsupervised labellings
 def get_indices_of_high_probability(pred_array):
     indices = []
+    count = 0
     for i in range(0, len(pred_array)):
-        if pred_array[i] > 0.60:
+        if pred_array[i] > 0.625:
+            count = count + 1
             indices.append(i)
-        elif pred_array[i] < 0.25:
+        elif pred_array[i] < 0.175:
             indices.append(i)
     return indices
 
@@ -333,6 +335,7 @@ def compute_semi_supervised_learning(neural_net, training_features, training_cla
 neural_network = compute_semi_supervised_learning(neural_network, X_train, Y_train)
 neural_network_pred = np.array(neural_network.predict_classes(np.array(X_test)))
 print_statistics("Semi-Supervised Neural Network", neural_network_pred, Y_test)
+
 
 # ************* Rule Model:  ************************
 # Here we compare 3 nearest neighbour models on the validation set
@@ -409,18 +412,18 @@ ada_boost_clf_pred = ada_boost_clf.predict(X_test)
 print_statistics("Ada Boost Classifier", ada_boost_clf_pred, Y_test)
 
 
-# Compute the Wilcoxon's signed rank test for a subset of pairs
+# Compute the Paired t signed rank test for a subset of pairs
 # of the models on the accuracy and recall per fold respectively
-def wilcoxons_signed_rank_test(data1, data2, model1name, model2name):
-    accuracy_t, accuracy_p_value = scipy.stats.wilcoxon(data1["test_accuracy"], data2["test_accuracy"])
-    recall_t, recall_p_value = scipy.stats.wilcoxon(data1["test_recall"], data2["test_recall"])
+def paired_t_test(data1, data2, model1name, model2name):
+    accuracy_t, accuracy_p_value = stats.ttest_ind(data1["test_accuracy"], data2["test_accuracy"])
+    recall_t, recall_p_value = stats.ttest_ind(data1["test_recall"], data2["test_recall"])
     print("\nPrinting stats for models " + model1name + " and " + model2name)
-    print("The Wilcoxon statistic for accuracy is given by " + str(accuracy_t))
+    print("The T statistic for accuracy is given by " + str(accuracy_t))
     if accuracy_p_value < 0.05:
         print("We reject the null hypothesis that the difference in accuracy of the models is not significantly different")
     else:
         print("The accuracy of the models is not significantly different")
-    print("The Wilcoxon statistic for recall is given by " + str(recall_t))
+    print("The T statistic for recall is given by " + str(recall_t))
     if recall_p_value < 0.05:
         print("We reject the null hypothesis that the difference in recall of the models is not significantly different")
     else:
@@ -429,17 +432,17 @@ def wilcoxons_signed_rank_test(data1, data2, model1name, model2name):
 
 # Compute the pairwise signed Wilcoxon's test (not for the neural network or the overall model)
 
-wilcoxons_signed_rank_test(dt_clf_cross_validation_scores, knn_cross_validation_scores, "Decision Tree",
+paired_t_test(dt_clf_cross_validation_scores, knn_cross_validation_scores, "Decision Tree",
                            "Nearest Neighbours")
-wilcoxons_signed_rank_test(dt_clf_cross_validation_scores, rule_clf_cross_validation_scores, "Decision Tree",
+paired_t_test(dt_clf_cross_validation_scores, rule_clf_cross_validation_scores, "Decision Tree",
                            "Skope Rules")
-wilcoxons_signed_rank_test(dt_clf_cross_validation_scores, ada_boost_cross_validation_scores, "Decision Tree",
+paired_t_test(dt_clf_cross_validation_scores, ada_boost_cross_validation_scores, "Decision Tree",
                            "Ada Boost Classifier")
-wilcoxons_signed_rank_test(knn_cross_validation_scores, rule_clf_cross_validation_scores, "Nearest Neighbours",
+paired_t_test(knn_cross_validation_scores, rule_clf_cross_validation_scores, "Nearest Neighbours",
                            "Skope Rules")
-wilcoxons_signed_rank_test(knn_cross_validation_scores, ada_boost_cross_validation_scores, "Nearest Neighbours",
+paired_t_test(knn_cross_validation_scores, ada_boost_cross_validation_scores, "Nearest Neighbours",
                            "Ada Boost Classifier")
-wilcoxons_signed_rank_test(rule_clf_cross_validation_scores, ada_boost_cross_validation_scores, "Skope Rule",
+paired_t_test(rule_clf_cross_validation_scores, ada_boost_cross_validation_scores, "Skope Rule",
                            "Ada Boost Classifier")
 
 
