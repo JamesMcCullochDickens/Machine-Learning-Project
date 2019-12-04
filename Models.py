@@ -282,7 +282,7 @@ def get_indices_of_high_probability(pred_array):
     indices = []
     count = 0
     for i in range(0, len(pred_array)):
-        if pred_array[i] > 0.625:
+        if pred_array[i] > 0.60:
             count = count + 1
             indices.append(i)
         elif pred_array[i] < 0.175:
